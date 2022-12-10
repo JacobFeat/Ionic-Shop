@@ -1,0 +1,7 @@
+{
+  "name": "Graysh-shop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
