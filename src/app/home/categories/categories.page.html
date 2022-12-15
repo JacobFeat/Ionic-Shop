@@ -1,3 +1,17 @@
-<p>
-  categories works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color="medium" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let category of loadedCategories" detail="true" lines="none">
+      <ion-label>{{ category.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
