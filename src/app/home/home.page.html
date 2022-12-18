@@ -1,6 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Home </ion-title>
+    <ion-searchbar
+      placeholder="Szukaj produktów"
+      searchIcon="assets/icon/search.svg"
+      show-cancel-button="focus"
+      cancel-button-text="Wyczyść"
+      clearIcon="false"
+      ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +23,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-button color="medium" routerLink="categories" fill="outline">
+  <ion-button color="secondary" routerLink="categories" fill="outline">
     Categories
   </ion-button>
 </ion-content>

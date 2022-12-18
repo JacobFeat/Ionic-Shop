@@ -25,5 +25,8 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import "./theme/fonts/fonts.scss";
+@import "./theme/configuration.scss";
+
 /* Custom ionic components */
-@import "./theme/ion-components.scss"
+@import "./theme/ion-components.scss";

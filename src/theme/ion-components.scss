@@ -1,8 +1,24 @@
 ion-toolbar {
   --min-height: 60px;
+  max-height: 60px;
+  padding-left: 19px;
+  padding-right: 19px;
+  // TODO replace important
+  --border-width: 0px !important;
+
+  ion-searchbar {
+    input {
+      font-size: 14px !important;
+      padding-inline-start: 40px !important;
+    }
+
+    .searchbar-cancel-button {
+      font-size: 14px !important;
+    }
+  }
 }
 
 ion-tab-bar {
-  --background: #F8F8F8;
-  --border-color: #C9C9C9;
+  --background: var(--ion-color-light);
+  --border-color: #c9c9c9;
 }
