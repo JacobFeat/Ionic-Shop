@@ -6,15 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { CommonPageRoutingModule } from './common-routing.module';
 
-import { CommonPage } from './common.page';
-
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CommonPageRoutingModule
-  ],
-  declarations: [CommonPage]
+  imports: [CommonModule, FormsModule, IonicModule, CommonPageRoutingModule],
+  declarations: [],
 })
 export class CommonPageModule {}
