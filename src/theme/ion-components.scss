@@ -5,6 +5,7 @@ ion-toolbar {
   padding-right: 19px;
   // TODO replace important
   --border-width: 0px !important;
+  --background: var(--ion-color-light);
 
   ion-searchbar {
     input {

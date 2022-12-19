@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-searchbar
       placeholder="Szukaj produktów"
@@ -6,24 +6,10 @@
       show-cancel-button="focus"
       cancel-button-text="Wyczyść"
       clearIcon="false"
-      ></ion-searchbar>
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item>
-      <ion-label> Test </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label> Test3 </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label> </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-button color="secondary" routerLink="categories" fill="outline">
-    Categories
-  </ion-button>
+  <app-horizontal-list></app-horizontal-list>
 </ion-content>

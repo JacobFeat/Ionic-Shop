@@ -1,7 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" color="medium" defaultHref="home"></ion-back-button>
+      <ion-back-button
+        text=""
+        color="medium"
+        defaultHref="home"
+      ></ion-back-button>
     </ion-buttons>
     <ion-title>Categories</ion-title>
   </ion-toolbar>
@@ -9,9 +13,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let category of loadedCategories" detail="true" lines="none">
+    <ion-item
+      *ngFor="let category of loadedCategories"
+      detail="true"
+      lines="none"
+    >
       <ion-label>{{ category.name }}</ion-label>
     </ion-item>
   </ion-list>
-  
+  <app-horizontal-list></app-horizontal-list>
 </ion-content>

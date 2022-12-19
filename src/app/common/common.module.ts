@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CommonPageRoutingModule } from './common-routing.module';
+import { HorizontalListModule } from './modules/horizontal-list/horizontal-list.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, CommonPageRoutingModule],
+  imports: [CommonModule, FormsModule, IonicModule, HorizontalListModule],
   declarations: [],
+  exports: [HorizontalListModule],
 })
-export class CommonPageModule {}
+export class CustomCommonModule {}
