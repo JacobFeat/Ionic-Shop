@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-
-SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom]);
+import { Component, Input, OnInit } from '@angular/core';
+import { SwiperOptions } from 'swiper/types/swiper-options';
+import { Product } from '../../defs/product-defs';
+import { products } from '../../mocks/products';
 
 @Component({
   selector: 'app-horizontal-list',
@@ -9,9 +9,27 @@ SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom]);
   styleUrls: ['./horizontal-list.component.scss'],
 })
 export class HorizontalListComponent implements OnInit {
+  @Input() type: 'square' | 'circle' = 'square';
 
-  constructor() { }
+  config: SwiperOptions = {
+    slidesPerView: 2.5,
+  };
 
-  ngOnInit() {}
+  protected products: Product[] = products;
 
+  constructor() {}
+
+  ngOnInit() {
+    this.setConfigByType();
+  }
+
+  private setConfigByType() {
+    if (this.type === 'circle') {
+      this.config.slidesPerView = 3.5;
+      this.config.spaceBetween = 26;
+    }
+    if (this.type === 'square') {
+      this.config.spaceBetween = 11;
+    }
+  }
 }

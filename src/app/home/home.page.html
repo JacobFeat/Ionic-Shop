@@ -11,5 +11,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-horizontal-list></app-horizontal-list>
+  <section class="section-container">
+    <app-horizontal-list></app-horizontal-list>
+  </section>
+  <section class="section-container">
+    <app-horizontal-list [type]="'circle'"></app-horizontal-list>
+  </section>
 </ion-content>

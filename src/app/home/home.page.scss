@@ -5,3 +5,12 @@ ion-searchbar {
   --placeholder-color: #535353;
   padding: 0;
 }
+
+.section-container {
+  margin: 40px 0;
+  padding: 0 var(--app-padding-side);
+
+  &:first-child {
+    margin-top: 24px;
+  }
+}
