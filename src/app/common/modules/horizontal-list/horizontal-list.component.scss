@@ -32,3 +32,19 @@ ion-text {
   font-size: 16px;
   font-weight: 700;
 }
+
+.circle {
+  text-align: center;
+}
+
+.card-title {
+  &.circle {
+    
+  }
+}
+
+.card-subtitle {
+  &.circle {
+    font-weight: 600;
+  }
+}

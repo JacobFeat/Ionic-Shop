@@ -8,3 +8,5 @@ export interface Product {
 }
 
 export type ProductSize = 'S' | 'M' | 'L' | 'XL' | 'XXL';
+
+export type ProductKeys = keyof Product;

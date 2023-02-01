@@ -1,23 +1,27 @@
-<ion-text class="title" color="primary">Specjalnie dla Ciebie</ion-text>
+<ion-text *ngIf="listModel.title" class="title" color="primary">{{
+  listModel.title
+}}</ion-text>
 <div class="swiper-container">
   <swiper [config]="config">
-    <ng-template swiperSlide *ngFor="let product of products">
+    <ng-template swiperSlide *ngFor="let item of listItems">
       <ion-card>
         <img
           [ngClass]="{ circle: type === 'circle' }"
-          [alt]="product.name"
-          [src]="product.imgUrl"
+          [alt]="item[listModel.imgAlt]"
+          [src]="item[listModel.imgUrl]"
         />
         <ion-card-content>
           <ion-text
             color="secondary"
-            [ngClass]="{ 'ion-text-center': type === 'circle' }"
-            >{{ product.name }}</ion-text
+            class="card-title"
+            [ngClass]="{ circle: type === 'circle' }"
+            >{{ item[listModel.firstLine] }}</ion-text
           >
           <ion-text
             color="secondary"
-            [ngClass]="{ 'ion-text-center': type === 'circle' }"
-            >{{ product.price }} {{ product.currency }}</ion-text
+            class="card-subtitle"
+            [ngClass]="{ circle: type === 'circle' }"
+            >{{ item[listModel.secondLine] }}</ion-text
           >
         </ion-card-content>
       </ion-card></ng-template

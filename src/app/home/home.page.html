@@ -12,9 +12,16 @@
 
 <ion-content [fullscreen]="true">
   <section class="section-container">
-    <app-horizontal-list></app-horizontal-list>
+    <app-horizontal-list
+      [listModel]="productsHorizontalModel"
+      [listItems]="products"
+    ></app-horizontal-list>
   </section>
   <section class="section-container">
-    <app-horizontal-list [type]="'circle'"></app-horizontal-list>
+    <app-horizontal-list
+      [listModel]="categoriesHorizontalModel"
+      [listItems]="categories"
+      [type]="'circle'"
+    ></app-horizontal-list>
   </section>
 </ion-content>
