@@ -5,30 +5,30 @@ export const categories: Category[] = [
     name: 'Koszulki',
     sex: 'On',
     imgUrl:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+      '../../../assets/mockImages/14.jpg',
   },
   {
     name: 'Spodnie',
     sex: 'On',
     imgUrl:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+      '../../../assets/mockImages/10.jpg',
   },
   {
     name: 'Marynarki',
     sex: 'On',
     imgUrl:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+      '../../../assets/mockImages/12.jpg',
   },
   {
     name: 'Swetry',
     sex: 'On',
     imgUrl:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+      '../../../assets/mockImages/22.jpg',
   },
   {
     name: 'Koszule',
     sex: 'On',
     imgUrl:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+      '../../../assets/mockImages/16.jpg',
   },
 ];

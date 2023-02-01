@@ -22,7 +22,6 @@ export class HorizontalListComponent implements OnInit {
 
   ngOnInit() {
     this.setConfigByType();
-    console.log(this.listModel);
   }
 
   private setConfigByType() {
