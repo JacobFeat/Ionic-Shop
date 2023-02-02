@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../common/defs/category-defs';
+import { Category, CategoryForYou } from '../common/defs/category.defs';
 import { Product } from '../common/defs/product-defs';
-import { categories } from '../common/mocks/categories';
-import { products } from '../common/mocks/products';
+import { Type } from '../common/defs/type.defs';
+import {
+  categories,
+  categoriesForYou,
+  products,
+  types,
+} from '../common/mocks/database';
 import { HorizontalListItem } from '../common/modules/horizontal-list/horizontal-list.defs';
 import { HomeListsModel } from './models/home-lists.model';
 
@@ -13,19 +18,20 @@ import { HomeListsModel } from './models/home-lists.model';
 })
 export class HomePage implements OnInit {
   protected products: Product[] = products;
-  protected categories: Category[] = categories;
+  protected categoriesForYou: CategoryForYou[] = categoriesForYou;
   protected productsHorizontalModel!: HorizontalListItem;
-  protected categoriesHorizontalModel!: HorizontalListItem;
+  protected categoriesForYouHorizontalModel!: HorizontalListItem;
 
   constructor() {}
 
   ngOnInit() {
     this.getHorizontalListModels();
+    console.log(this.categoriesForYou);
   }
 
   private getHorizontalListModels() {
     this.productsHorizontalModel = HomeListsModel.getProductsHorizontalModel();
-    this.categoriesHorizontalModel =
-      HomeListsModel.getCategoriesHorizontalModel();
+    this.categoriesForYouHorizontalModel =
+      HomeListsModel.getCategoriesForYouHorizontalModel();
   }
 }

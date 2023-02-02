@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper/types/swiper-options';
-import { Category, CategoryKeys } from '../../defs/category-defs';
+import { Category, CategoryKeys } from '../../defs/category.defs';
 import { Product, ProductKeys } from '../../defs/product-defs';
 import { HorizontalListItem } from './horizontal-list.defs';
 
@@ -22,6 +22,7 @@ export class HorizontalListComponent implements OnInit {
 
   ngOnInit() {
     this.setConfigByType();
+    console.log(this.listItems);
   }
 
   private setConfigByType() {

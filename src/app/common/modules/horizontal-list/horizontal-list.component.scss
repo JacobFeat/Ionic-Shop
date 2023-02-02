@@ -9,10 +9,15 @@ ion-card {
   margin-left: 0;
   margin-right: 0;
 
+  img {
+    height: 215px;
+    object-fit: cover;
+  }
+
   img.circle {
+    height: unset;
     border-radius: 100%;
     aspect-ratio: 1/1;
-    object-fit: cover;
     object-position: 50% 50%;
     width: 71px;
   }
@@ -39,7 +44,6 @@ ion-text {
 
 .card-title {
   &.circle {
-    
   }
 }
 
