@@ -14,3 +14,15 @@ ion-searchbar {
     margin-top: 24px;
   }
 }
+
+.vertical-list {
+  ion-item {
+    margin-bottom: 37px;
+  }
+
+  ion-label {
+    // TODO przerobic na REM
+    font-size: 24px;
+    font-weight: 600;
+  }
+}

@@ -19,6 +19,7 @@ import { HomeListsModel } from './models/home-lists.model';
 export class HomePage implements OnInit {
   protected products: Product[] = products;
   protected categoriesForYou: CategoryForYou[] = categoriesForYou;
+  protected categories: Category[] = categories;
   protected productsHorizontalModel!: HorizontalListItem;
   protected categoriesForYouHorizontalModel!: HorizontalListItem;
 

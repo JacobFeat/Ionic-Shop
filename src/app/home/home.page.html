@@ -24,4 +24,11 @@
       [type]="'circle'"
     ></app-horizontal-list>
   </section>
+  <section class="section-container">
+    <ion-list lines="none" class="vertical-list">
+      <ion-item *ngFor="let category of categories">
+        <ion-label class="ion-text-center">{{ category.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </section>
 </ion-content>
