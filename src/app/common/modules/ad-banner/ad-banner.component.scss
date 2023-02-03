@@ -1,0 +1,17 @@
+ion-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-size: cover;
+  background-position-y: center;
+}
+
+ion-card-title {
+    color: var(--ion-color-light);
+    text-align: center;
+    font-weight: normal;
+}

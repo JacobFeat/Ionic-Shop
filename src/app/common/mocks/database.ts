@@ -1,3 +1,4 @@
+import { Ad } from '../defs/ad.defs';
 import { Category, CategoryForYou } from '../defs/category.defs';
 import { Product } from '../defs/product-defs';
 import { Type } from '../defs/type.defs';
@@ -161,3 +162,16 @@ interface Collection {
   name: string;
   id: number;
 }
+
+export const ads: Ad[] = [
+  {
+    imgUrl: '/assets/mockImages/ad1.jpg',
+    title: 'Sprawdź wyjątkowe promocje',
+    height: 220,
+  },
+  {
+    imgUrl: '/assets/mockImages/ad11.jpg',
+    title: 'Zapowiadają się przytulne Święta!',
+    height: 440,
+  },
+];
