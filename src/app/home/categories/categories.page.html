@@ -7,19 +7,18 @@
         defaultHref="home"
       ></ion-back-button>
     </ion-buttons>
-    <ion-title>Categories</ion-title>
+    <ion-title>On</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-item
-      *ngFor="let category of loadedCategories"
+      *ngFor="let type of productsTypes"
       detail="true"
       lines="none"
     >
-      <ion-label>{{ category.name }}</ion-label>
+      <ion-label>{{ type.name }}</ion-label>
     </ion-item>
   </ion-list>
-  <app-horizontal-list></app-horizontal-list>
 </ion-content>

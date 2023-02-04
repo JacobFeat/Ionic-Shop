@@ -5,9 +5,9 @@ import { CategoriesPage } from './categories.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: CategoriesPage
-  }
+    path: ':id',
+    component: CategoriesPage,
+  },
 ];
 
 @NgModule({

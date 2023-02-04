@@ -1,3 +1,4 @@
+import { type } from 'os';
 import { Ad } from '../defs/ad.defs';
 import { Category, CategoryForYou } from '../defs/category.defs';
 import { Product } from '../defs/product-defs';
@@ -21,7 +22,7 @@ export const products: Product[] = [
     price: 59.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/9.jpg',
-    type_id: 2,
+    type_id: 1,
     category_id: 1,
   },
   {
@@ -175,3 +176,21 @@ export const ads: Ad[] = [
     height: 440,
   },
 ];
+
+export function getAvailableTypesInCategory(categoryId: number): Type[] {
+  const productsInCategory = findAllProductsInCategoryById(categoryId);
+  const availableTypesId = getAvailableTypesIdByProducts(productsInCategory);
+  return getAllTypesById(availableTypesId);
+}
+
+function findAllProductsInCategoryById(categoryId: number): Product[] {
+  return products.filter((product) => product.category_id === categoryId);
+}
+
+function getAvailableTypesIdByProducts(products: Product[]): number[] {
+  return [...new Set(products.map((product) => product.type_id))];
+}
+
+function getAllTypesById(typeIdsCollection: number[]): Type[] {
+  return types.filter((type) => typeIdsCollection.includes(type.id));
+}

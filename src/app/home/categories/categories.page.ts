@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { Type } from 'src/app/common/defs/type.defs';
+import { TypesService } from 'src/app/common/services/types.service';
 import { Category } from './category.model';
-import { CategoriesService } from './services/categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -9,10 +12,24 @@ import { CategoriesService } from './services/categories.service';
 })
 export class CategoriesPage implements OnInit {
   protected loadedCategories!: Category[];
+  protected productsTypes!: Type[];
 
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(
+    private typesService: TypesService,
+    private navCtrl: NavController,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.loadedCategories = this.categoriesService.categories;
+    this.route.paramMap.subscribe((paramMap) => {
+      if (!paramMap.has('id')) {
+        this.navCtrl.navigateBack('/home');
+        return;
+      }
+      this.productsTypes = this.typesService.getAvailableTypesInCategory(
+        Number(paramMap.get('id'))
+      );
+      console.log(this.productsTypes);
+    });
   }
 }
