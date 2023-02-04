@@ -175,6 +175,11 @@ export const ads: Ad[] = [
     title: 'Zapowiadają się przytulne Święta!',
     height: 440,
   },
+  {
+    imgUrl: '/assets/mockImages/20.jpg',
+    title: 'The suitmen x Graysh',
+    height: 440,
+  },
 ];
 
 export function getAvailableTypesInCategory(categoryId: number): Type[] {
@@ -197,4 +202,12 @@ function getAllTypesById(typeIdsCollection: number[]): Type[] {
 
 export function getCategoryNameById(categoryId: number): string {
   return categories.find((category) => category.id === categoryId)!.name;
+}
+
+export function getTheMostPopularProducts(): Product[] {
+  const theMostPopularProductsIds = [4, 5, 6, 3];
+
+  return [...products].filter((product) =>
+    theMostPopularProductsIds.includes(product.id)
+  );
 }

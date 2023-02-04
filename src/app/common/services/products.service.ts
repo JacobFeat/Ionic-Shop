@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../defs/product-defs';
-import { products } from '../mocks/database';
+import {
+  getTheMostPopularProducts as getTheMostPopularProducts,
+  products,
+} from '../mocks/database';
 
 @Injectable({
   providedIn: 'root',
@@ -8,5 +11,9 @@ import { products } from '../mocks/database';
 export class ProductsService {
   get products(): Product[] {
     return products;
+  }
+
+  get theMostPopularProducts() {
+    return getTheMostPopularProducts();
   }
 }

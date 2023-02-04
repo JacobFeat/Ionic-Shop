@@ -12,9 +12,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let type of productsTypes" detail="true" lines="none">
-      <ion-label>{{ type.name }}</ion-label>
-    </ion-item>
-  </ion-list>
+  <section class="section-container">
+    <app-ad-banner [ad]="ads[2]"></app-ad-banner>
+  </section>
+  <section class="section-container">
+    <app-horizontal-list
+      [listItems]="mostPopularProducts"
+      [listModel]="mostPopularProductsHorizontalModel"
+    ></app-horizontal-list>
+  </section>
+  <section class="section-container vertical-list">
+    <ion-list>
+      <ion-item *ngFor="let type of productsTypes" detail="true" lines="none">
+        <ion-label>{{ type.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </section>
 </ion-content>

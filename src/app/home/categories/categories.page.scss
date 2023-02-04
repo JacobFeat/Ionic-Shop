@@ -1,3 +1,9 @@
-// ion-item {
-//     --background: red;
-// }
+.section-container {
+  &:first-child {
+    margin-top: 10px;
+  }
+}
+
+.vertical-list {
+  margin-top: -20px;
+}
