@@ -194,3 +194,7 @@ function getAvailableTypesIdByProducts(products: Product[]): number[] {
 function getAllTypesById(typeIdsCollection: number[]): Type[] {
   return types.filter((type) => typeIdsCollection.includes(type.id));
 }
+
+export function getCategoryNameById(categoryId: number): string {
+  return categories.find((category) => category.id === categoryId)!.name;
+}

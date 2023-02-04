@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Type } from 'src/app/common/defs/type.defs';
+import { CategoriesService } from 'src/app/common/services/categories.service';
 import { TypesService } from 'src/app/common/services/types.service';
 import { Category } from './category.model';
 
@@ -11,10 +12,11 @@ import { Category } from './category.model';
   styleUrls: ['./categories.page.scss'],
 })
 export class CategoriesPage implements OnInit {
-  protected loadedCategories!: Category[];
   protected productsTypes!: Type[];
+  protected categoryName!: string;
 
   constructor(
+    private categoriesService: CategoriesService,
     private typesService: TypesService,
     private navCtrl: NavController,
     private route: ActivatedRoute
@@ -22,14 +24,19 @@ export class CategoriesPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap) => {
-      if (!paramMap.has('id')) {
-        this.navCtrl.navigateBack('/home');
-        return;
-      }
-      this.productsTypes = this.typesService.getAvailableTypesInCategory(
-        Number(paramMap.get('id'))
-      );
-      console.log(this.productsTypes);
+      if (!paramMap.has('id')) this.navigateBackToHome();
+      this.initDataFromRouterParam(paramMap);
     });
+  }
+
+  private navigateBackToHome() {
+    return this.navCtrl.navigateBack('/home');
+  }
+
+  private initDataFromRouterParam(paramMap: ParamMap): void {
+    const categoryId = Number(paramMap.get('id'));
+    this.productsTypes =
+      this.typesService.getAvailableTypesInCategory(categoryId);
+    this.categoryName = this.categoriesService.getCategoryNameById(categoryId);
   }
 }
