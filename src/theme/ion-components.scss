@@ -23,3 +23,8 @@ ion-tab-bar {
   --background: var(--ion-color-light);
   --border-color: #c9c9c9;
 }
+
+ion-item {
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+}
