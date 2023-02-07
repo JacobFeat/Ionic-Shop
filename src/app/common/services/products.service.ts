@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../defs/product-defs';
 import {
+  getProductById,
   getTheMostPopularProducts as getTheMostPopularProducts,
   products,
 } from '../mocks/database';
@@ -15,5 +16,9 @@ export class ProductsService {
 
   get theMostPopularProducts() {
     return getTheMostPopularProducts();
+  }
+
+  getProductById(productId: number) {
+    return getProductById(productId);
   }
 }

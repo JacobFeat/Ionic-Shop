@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Type } from '../defs/type.defs';
-import { getAvailableTypesInCategory } from '../mocks/database';
+import {
+  getAvailableTypesInCategory,
+  getProductTypeById,
+} from '../mocks/database';
 
 @Injectable({
   providedIn: 'root',
@@ -10,5 +13,9 @@ export class TypesService {
 
   getAvailableTypesInCategory(categoryId: number): Type[] {
     return getAvailableTypesInCategory(categoryId);
+  }
+
+  getProductTypeById(typeId: number): Type | undefined {
+    return getProductTypeById(typeId);
   }
 }

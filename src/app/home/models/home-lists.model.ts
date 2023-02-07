@@ -12,7 +12,7 @@ export class HomeListsModel {
       imgAlt: 'name',
     };
   }
-
+  
   static getCategoriesForYouHorizontalModel(): HorizontalListItem {
     return {
       title: 'Kategorie dla Ciebie',
@@ -20,6 +20,8 @@ export class HomeListsModel {
       secondLine: 'typeName',
       imgUrl: 'imgUrl',
       imgAlt: 'name',
+      route: 'product-types',
+      idName: 'typeId'
     };
   }
 }

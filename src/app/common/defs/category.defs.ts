@@ -10,4 +10,6 @@ export interface CategoryForYou {
   categoryName: string | undefined;
   typeName: string | undefined;
   imgUrl: string | undefined;
+  categoryId: number | undefined;
+  typeId: number | undefined;
 }

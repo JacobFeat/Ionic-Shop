@@ -13,6 +13,7 @@ export class HorizontalListComponent implements OnInit {
   @Input() type: 'square' | 'circle' = 'square';
   @Input() listModel!: HorizontalListItem;
   @Input() listItems!: any[];
+  protected routerLink!: string;
 
   config: SwiperOptions = {
     slidesPerView: 2.5,
@@ -22,6 +23,17 @@ export class HorizontalListComponent implements OnInit {
 
   ngOnInit() {
     this.setConfigByType();
+  }
+
+  protected routeInListModelExists(): boolean {
+    return !!this.listModel.route;
+  }
+
+  protected setRouterPath(item: any): string {
+    if (this.listModel.idName) {
+      return this.listModel.route + '/' + item[this.listModel.idName];
+    }
+    return '';
   }
 
   private setConfigByType() {

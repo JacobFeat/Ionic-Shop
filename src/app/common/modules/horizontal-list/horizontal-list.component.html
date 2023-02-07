@@ -4,7 +4,9 @@
 <div class="swiper-container">
   <swiper [config]="config">
     <ng-template swiperSlide *ngFor="let item of listItems">
-      <ion-card>
+      <ion-card
+        [routerLink]="routeInListModelExists() ? setRouterPath(item) : []"
+      >
         <img
           [ngClass]="{ circle: type === 'circle' }"
           [alt]="item[listModel.imgAlt]"

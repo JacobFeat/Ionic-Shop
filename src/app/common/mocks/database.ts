@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { Ad } from '../defs/ad.defs';
 import { Category, CategoryForYou } from '../defs/category.defs';
 import { Product } from '../defs/product-defs';
@@ -128,26 +127,36 @@ export const categoriesForYou: CategoryForYou[] = [
   {
     categoryName: getNameByIdInCollection(categories, 1),
     typeName: getNameByIdInCollection(types, 1),
+    categoryId: 1,
+    typeId: 1,
     imgUrl: '../../../assets/mockImages/19.jpg',
   },
   {
     categoryName: getNameByIdInCollection(categories, 1),
     typeName: getNameByIdInCollection(types, 2),
+    categoryId: 1,
+    typeId: 2,
     imgUrl: '../../../assets/mockImages/20.jpg',
   },
   {
     categoryName: getNameByIdInCollection(categories, 1),
     typeName: getNameByIdInCollection(types, 3),
+    categoryId: 1,
+    typeId: 3,
     imgUrl: '../../../assets/mockImages/21.jpg',
   },
   {
     categoryName: getNameByIdInCollection(categories, 1),
     typeName: getNameByIdInCollection(types, 4),
+    categoryId: 1,
+    typeId: 4,
     imgUrl: '../../../assets/mockImages/22.jpg',
   },
   {
     categoryName: getNameByIdInCollection(categories, 1),
     typeName: getNameByIdInCollection(types, 6),
+    categoryId: 1,
+    typeId: 6,
     imgUrl: '../../../assets/mockImages/23.jpg',
   },
 ];
@@ -210,4 +219,12 @@ export function getTheMostPopularProducts(): Product[] {
   return [...products].filter((product) =>
     theMostPopularProductsIds.includes(product.id)
   );
+}
+
+export function getProductById(productId: number) {
+  return products.find((product) => product.id === productId);
+}
+
+export function getProductTypeById(typeId: number): Type | undefined {
+  return types.find((type) => type.id === typeId);
 }
