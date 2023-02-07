@@ -9,11 +9,24 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+    loadChildren: () =>
+      import('./categories/categories.module').then(
+        (m) => m.CategoriesPageModule
+      ),
   },
   {
     path: 'product-types',
-    loadChildren: () => import('./product-types/product-types.module').then( m => m.ProductTypesPageModule)
+    loadChildren: () =>
+      import('./product-types/product-types.module').then(
+        (m) => m.ProductTypesPageModule
+      ),
+  },
+  {
+    path: 'product-details',
+    loadChildren: () =>
+      import('../common/modules/product-details/product-details.module').then(
+        (m) => m.ProductDetailsPageModule
+      ),
   },
 ];
 
