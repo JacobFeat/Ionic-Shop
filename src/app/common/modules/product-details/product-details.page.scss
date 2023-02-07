@@ -1,0 +1,35 @@
+ion-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  --background: none;
+}
+
+ion-back-button, ion-button {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-color: rgba($color: #fff, $alpha: 0.9);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+
+ion-grid,
+.img-wrapper {
+  padding: 0;
+}
+
+.img-wrapper img {
+  min-height: 580px;
+  height: 580px;
+  min-width: 100%;
+  object-fit: cover;
+}

@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>product-details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        text=""
+        defaultHref="home"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" icon="assets/icon/bag.svg" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col class="img-wrapper">
+        <img [src]="currentProduct?.imgUrl" alt="" />
+      </ion-col>
+    </ion-row>
+    <div class="section-container">
+      <ion-row>
+        <ion-col>{{ currentProduct?.name }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>{{ currentProduct?.price }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button>Sprawdź dostępność w sklepie</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>{{ currentProduct?.description }}</ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>

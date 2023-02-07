@@ -7,6 +7,12 @@ ion-toolbar {
   --border-width: 0px !important;
   --background: var(--ion-color-light);
 
+  ion-buttons {
+    ion-back-button::part(icon), ion-button ion-icon {
+      max-height: 24px;
+    }
+  }
+
   ion-searchbar {
     input {
       font-size: 14px !important;
