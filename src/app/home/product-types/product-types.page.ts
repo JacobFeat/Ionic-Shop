@@ -32,6 +32,5 @@ export class ProductTypesPage implements OnInit {
   private initDataFromRouterParam(paramMap: ParamMap): void {
     const typeId = Number(paramMap.get('typeId'));
     this.currentProductType = this.typesService.getProductTypeById(typeId);
-    console.log(this.currentProductType);
   }
 }

@@ -5,38 +5,50 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: 'my-profile',
-    loadChildren: () => import('./my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+    loadChildren: () =>
+      import('./my-profile/my-profile.module').then(
+        (m) => m.MyProfilePageModule
+      ),
   },
   {
     path: 'favourites',
-    loadChildren: () => import('./favourites/favourites.module').then( m => m.FavouritesPageModule)
+    loadChildren: () =>
+      import('./favourites/favourites.module').then(
+        (m) => m.FavouritesPageModule
+      ),
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+    loadChildren: () =>
+      import('./cart/cart.module').then((m) => m.CartPageModule),
   },
   {
     path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
-  },  {
-    path: 'product-details',
-    loadChildren: () => import('./common/modules/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+    loadChildren: () =>
+      import('./settings/settings.module').then((m) => m.SettingsPageModule),
   },
-
+  {
+    path: 'product-details',
+    loadChildren: () =>
+      import('./common/modules/product-details/product-details.module').then(
+        (m) => m.ProductDetailsPageModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

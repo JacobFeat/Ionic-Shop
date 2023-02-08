@@ -8,8 +8,10 @@ export class CategoriesListsModel {
       secondLine: 'price',
       imgUrl: 'imgUrl',
       imgAlt: 'name',
-      route: 'product-details',
-      idName: 'id',
+      route: 'product-types',
+      idName: 'type_id',
+      secondRoute: 'product-details',
+      secondIdName: 'id',
     };
   }
 }

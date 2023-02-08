@@ -8,24 +8,24 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'categories',
+    path: 'categories/:categoryId/product-types/:typeId/product-details/:productId',
     loadChildren: () =>
-      import('./categories/categories.module').then(
-        (m) => m.CategoriesPageModule
+      import('../common/modules/product-details/product-details.module').then(
+        (m) => m.ProductDetailsPageModule
       ),
   },
   {
-    path: 'product-types',
+    path: 'categories/:categoryId/product-types/:typeId',
     loadChildren: () =>
       import('./product-types/product-types.module').then(
         (m) => m.ProductTypesPageModule
       ),
   },
   {
-    path: 'product-details',
+    path: 'categories/:categoryId',
     loadChildren: () =>
-      import('../common/modules/product-details/product-details.module').then(
-        (m) => m.ProductDetailsPageModule
+      import('./categories/categories.module').then(
+        (m) => m.CategoriesPageModule
       ),
   },
 ];

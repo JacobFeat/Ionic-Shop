@@ -5,7 +5,7 @@ import { ProductDetailsPage } from './product-details.page';
 
 const routes: Routes = [
   {
-    path: ':productId',
+    path: '',
     component: ProductDetailsPage
   }
 ];

@@ -5,7 +5,7 @@ import { CategoriesPage } from './categories.page';
 
 const routes: Routes = [
   {
-    path: ':id',
+    path: '',
     component: CategoriesPage,
   },
 ];

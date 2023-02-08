@@ -17,6 +17,8 @@ import { CategoriesListsModel } from './models/categories-lists.model';
   styleUrls: ['./categories.page.scss'],
 })
 export class CategoriesPage implements OnInit {
+  private paramName = 'categoryId';
+  protected categoryId!: number;
   protected productsTypes!: Type[];
   protected categoryName!: string;
   protected ads!: Ad[];
@@ -34,7 +36,7 @@ export class CategoriesPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap) => {
-      if (!paramMap.has('id')) this.navigateBackToHome();
+      if (!paramMap.has(this.paramName)) this.navigateBackToHome();
       this.initDataFromRouterParam(paramMap);
       this.initDataFromDb();
       this.getHorizontalListModels();
@@ -46,10 +48,10 @@ export class CategoriesPage implements OnInit {
   }
 
   private initDataFromRouterParam(paramMap: ParamMap): void {
-    const categoryId = Number(paramMap.get('id'));
+    this.categoryId = Number(paramMap.get(this.paramName));
     this.productsTypes =
-      this.typesService.getAvailableTypesInCategory(categoryId);
-    this.categoryName = this.categoriesService.getCategoryNameById(categoryId);
+      this.typesService.getAvailableTypesInCategory(this.categoryId);
+    this.categoryName = this.categoriesService.getCategoryNameById(this.categoryId);
   }
 
   private initDataFromDb(): void {

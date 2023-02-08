@@ -5,5 +5,9 @@ export interface HorizontalListItem<InterfaceKeysOrString = string> {
   secondLine: InterfaceKeysOrString;
   title?: string;
   route?: string;
+  secondRoute?: string;
+  thirdRoute?: string;
   idName?: string;
+  secondIdName?: string;
+  thirdIdName?: string;
 }

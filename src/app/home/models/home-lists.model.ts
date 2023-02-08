@@ -10,8 +10,12 @@ export class HomeListsModel {
       secondLine: 'price',
       imgUrl: 'imgUrl',
       imgAlt: 'name',
-      route: 'product-details',
-      idName: 'id',
+      route: 'categories',
+      idName: 'category_id',
+      secondRoute: 'product-types',
+      secondIdName: 'type_id',
+      thirdRoute: 'product-details',
+      thirdIdName: 'id',
     };
   }
 
@@ -22,8 +26,10 @@ export class HomeListsModel {
       secondLine: 'typeName',
       imgUrl: 'imgUrl',
       imgAlt: 'name',
-      route: 'product-types',
-      idName: 'typeId',
+      route: 'categories',
+      idName: 'categoryId',
+      secondRoute: 'product-types',
+      secondIdName: 'typeId',
     };
   }
 }

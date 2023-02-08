@@ -5,7 +5,7 @@ import { ProductTypesPage } from './product-types.page';
 
 const routes: Routes = [
   {
-    path: ':typeId',
+    path: '',
     component: ProductTypesPage
   }
 ];

@@ -30,8 +30,33 @@ export class HorizontalListComponent implements OnInit {
   }
 
   protected setRouterPath(item: any): string {
+    let routerPath = '';
+    routerPath += this.setFirstPartOfRouterPath(item);
+    routerPath += this.setSecondPartOfRouterPath(item);
+    routerPath += this.setThirdPartOfRouterPath(item);
+    return routerPath;
+  }
+
+  private setFirstPartOfRouterPath(item: any): string {
     if (this.listModel.idName) {
-      return `${this.listModel.route}/${item[this.listModel.idName]}`
+      return `${this.listModel.route}/${item[this.listModel.idName]}`;
+    }
+    return '';
+  }
+
+  private setSecondPartOfRouterPath(item: any): string {
+    if (this.listModel.secondIdName) {
+      return `/${this.listModel.secondRoute}/${
+        item[this.listModel.secondIdName]
+      }`;
+    }
+    return '';
+  }
+  private setThirdPartOfRouterPath(item: any): string {
+    if (this.listModel.thirdIdName) {
+      return `/${this.listModel.thirdRoute}/${
+        item[this.listModel.thirdIdName]
+      }`;
     }
     return '';
   }

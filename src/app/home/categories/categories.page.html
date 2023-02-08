@@ -32,7 +32,13 @@
   </section>
   <section class="section-container vertical-list" *ngIf="productsTypes.length">
     <ion-list>
-      <ion-item *ngFor="let type of productsTypes" [routerLink]="'product-types/' + type.id" detail="true" detailIcon="assets/icon/arrow-right.svg" lines="none">
+      <ion-item
+        *ngFor="let type of productsTypes"
+        [routerLink]="['/home', 'categories', categoryId, 'product-types', type.id]"
+        detail="true"
+        detailIcon="assets/icon/arrow-right.svg"
+        lines="none"
+      >
         <ion-label class="vertical-list-item">{{ type.name }}</ion-label>
       </ion-item>
     </ion-list>
