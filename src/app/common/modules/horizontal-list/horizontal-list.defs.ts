@@ -4,10 +4,10 @@ export interface HorizontalListItem<InterfaceKeysOrString = string> {
   firstLine: InterfaceKeysOrString;
   secondLine: InterfaceKeysOrString;
   title?: string;
-  route?: string;
-  secondRoute?: string;
-  thirdRoute?: string;
-  idName?: string;
-  secondIdName?: string;
-  thirdIdName?: string;
+  routing?: routingItem[];
+}
+
+interface routingItem {
+  pathName: string;
+  idName: string;
 }

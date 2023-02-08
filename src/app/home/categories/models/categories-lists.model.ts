@@ -8,10 +8,16 @@ export class CategoriesListsModel {
       secondLine: 'price',
       imgUrl: 'imgUrl',
       imgAlt: 'name',
-      route: 'product-types',
-      idName: 'type_id',
-      secondRoute: 'product-details',
-      secondIdName: 'id',
+      routing: [
+        {
+          pathName: 'product-types',
+          idName: 'type_id',
+        },
+        {
+          pathName: 'product-details',
+          idName: 'id',
+        },
+      ],
     };
   }
 }

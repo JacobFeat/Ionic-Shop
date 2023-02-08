@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper/types/swiper-options';
-import { Category, CategoryKeys } from '../../defs/category.defs';
-import { Product, ProductKeys } from '../../defs/product-defs';
 import { HorizontalListItem } from './horizontal-list.defs';
 
 @Component({
@@ -26,40 +24,17 @@ export class HorizontalListComponent implements OnInit {
   }
 
   protected routeInListModelExists(): boolean {
-    return !!this.listModel.route;
+    return !!this.listModel.routing?.length;
   }
 
   protected setRouterPath(item: any): string {
-    let routerPath = '';
-    routerPath += this.setFirstPartOfRouterPath(item);
-    routerPath += this.setSecondPartOfRouterPath(item);
-    routerPath += this.setThirdPartOfRouterPath(item);
-    return routerPath;
+    let route = '';
+    this.listModel.routing?.forEach((path) => {
+      route += `${path.pathName}/${item[path.idName]}/`;
+    });
+    return route;
   }
 
-  private setFirstPartOfRouterPath(item: any): string {
-    if (this.listModel.idName) {
-      return `${this.listModel.route}/${item[this.listModel.idName]}`;
-    }
-    return '';
-  }
-
-  private setSecondPartOfRouterPath(item: any): string {
-    if (this.listModel.secondIdName) {
-      return `/${this.listModel.secondRoute}/${
-        item[this.listModel.secondIdName]
-      }`;
-    }
-    return '';
-  }
-  private setThirdPartOfRouterPath(item: any): string {
-    if (this.listModel.thirdIdName) {
-      return `/${this.listModel.thirdRoute}/${
-        item[this.listModel.thirdIdName]
-      }`;
-    }
-    return '';
-  }
 
   private setConfigByType() {
     if (this.type === 'circle') {
