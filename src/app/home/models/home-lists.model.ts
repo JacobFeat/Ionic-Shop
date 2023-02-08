@@ -11,7 +11,7 @@ export class HomeListsModel {
       imgUrl: 'imgUrl',
       imgAlt: 'name',
       routing: [
-        { pathName: 'categories', idName: 'categoryId' },
+        { pathName: 'categories', idName: 'category_id' },
         { pathName: 'product-types', idName: 'type_id' },
         { pathName: 'product-details', idName: 'id' },
       ],

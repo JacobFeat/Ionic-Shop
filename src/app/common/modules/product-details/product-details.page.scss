@@ -62,6 +62,7 @@ ion-col {
   display: flex;
   justify-content: center;
   margin: 30px 0;
+
 }
 
 .check-availability-btn {
@@ -69,4 +70,5 @@ ion-col {
   font-weight: 600;
   color: var(--ion-color-primary);
   --background: none;
+  --background-activated: none;
 }
