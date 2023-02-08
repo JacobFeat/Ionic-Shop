@@ -29,8 +29,9 @@ ion-grid,
 }
 
 .img-wrapper img {
-  min-height: 580px;
-  height: 580px;
+  $height: 70vh;
+  min-height: $height;
+  max-height: $height;
   min-width: 100%;
   object-fit: cover;
 }

@@ -32,6 +32,5 @@ export class ProductDetailsPage implements OnInit {
   private initDataFromRouterParam(paramMap: ParamMap): void {
     const productId = Number(paramMap.get('productId'));
     this.currentProduct = this.productsService.getProductById(productId);
-    console.log(this.currentProduct);
   }
 }
