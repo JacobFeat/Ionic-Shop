@@ -23,7 +23,9 @@
         <ion-col class="product-name">{{ currentProduct?.name }}</ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="product-price">{{ currentProduct?.price }}</ion-col>
+        <ion-col class="product-price"
+          >{{ currentProduct?.price | currency }}</ion-col
+        >
       </ion-row>
       <ion-row>
         <ion-col class="check-availability-wrapper">
