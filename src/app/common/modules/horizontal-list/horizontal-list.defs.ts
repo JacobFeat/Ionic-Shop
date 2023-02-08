@@ -3,6 +3,7 @@ export interface HorizontalListItem<InterfaceKeysOrString = string> {
   imgAlt: InterfaceKeysOrString;
   firstLine: InterfaceKeysOrString;
   secondLine: InterfaceKeysOrString;
+  isModal?: boolean;
   title?: string;
   routing?: routingItem[];
 }

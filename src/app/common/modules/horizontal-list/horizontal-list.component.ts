@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ComponentRef, Input, OnInit } from '@angular/core';
+import { ModalController, ModalOptions } from '@ionic/angular';
 import { SwiperOptions } from 'swiper/types/swiper-options';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { HorizontalListItem } from './horizontal-list.defs';
 
 @Component({
@@ -11,13 +13,14 @@ export class HorizontalListComponent implements OnInit {
   @Input() type: 'square' | 'circle' = 'square';
   @Input() listModel!: HorizontalListItem;
   @Input() listItems!: any[];
+  @Input() modalComponent!: any;
   protected routerLink!: string;
 
   config: SwiperOptions = {
     slidesPerView: 2.5,
   };
 
-  constructor() {}
+  constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.setConfigByType();
@@ -35,6 +38,18 @@ export class HorizontalListComponent implements OnInit {
     return route;
   }
 
+  protected openModal(item: any): void {
+    if (this.listModel.isModal && this.modalComponent) {
+      this.modalCtrl
+        .create({
+          component: this.modalComponent,
+          componentProps: { product: item },
+        })
+        .then((modalEl) => {
+          modalEl.present();
+        });
+    }
+  }
 
   private setConfigByType() {
     if (this.type === 'circle') {

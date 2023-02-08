@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentRef, OnInit } from '@angular/core';
 import { Ad } from '../common/defs/ad.defs';
 import { Category, CategoryForYou } from '../common/defs/category.defs';
 import { Product } from '../common/defs/product-defs';
 import { HorizontalListItem } from '../common/modules/horizontal-list/horizontal-list.defs';
+import { ProductDetailsComponent } from '../common/modules/product-details/product-details.component';
 import { AdsService } from '../common/services/ads.service';
 import { CategoriesService } from '../common/services/categories.service';
 import { ProductsService } from '../common/services/products.service';
@@ -20,6 +21,7 @@ export class HomePage implements OnInit {
   protected ads!: Ad[];
   protected specialForYouProductsHorizontalModel!: HorizontalListItem;
   protected categoriesForYouHorizontalModel!: HorizontalListItem;
+  protected productDetailComponent = ProductDetailsComponent;
 
   constructor(
     private productsService: ProductsService,
@@ -40,7 +42,8 @@ export class HomePage implements OnInit {
   }
 
   private getHorizontalListModels(): void {
-    this.specialForYouProductsHorizontalModel = HomeListsModel.getProductsHorizontalModel();
+    this.specialForYouProductsHorizontalModel =
+      HomeListsModel.getProductsHorizontalModel();
     this.categoriesForYouHorizontalModel =
       HomeListsModel.getCategoriesForYouHorizontalModel();
   }

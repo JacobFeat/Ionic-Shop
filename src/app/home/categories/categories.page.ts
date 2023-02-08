@@ -5,6 +5,7 @@ import { Ad } from 'src/app/common/defs/ad.defs';
 import { Product } from 'src/app/common/defs/product-defs';
 import { Type } from 'src/app/common/defs/type.defs';
 import { HorizontalListItem } from 'src/app/common/modules/horizontal-list/horizontal-list.defs';
+import { ProductDetailsComponent } from 'src/app/common/modules/product-details/product-details.component';
 import { AdsService } from 'src/app/common/services/ads.service';
 import { CategoriesService } from 'src/app/common/services/categories.service';
 import { ProductsService } from 'src/app/common/services/products.service';
@@ -24,6 +25,7 @@ export class CategoriesPage implements OnInit {
   protected ads!: Ad[];
   protected mostPopularProducts!: Product[];
   protected mostPopularProductsHorizontalModel!: HorizontalListItem;
+  protected productDetailComponent = ProductDetailsComponent;
 
   constructor(
     private categoriesService: CategoriesService,

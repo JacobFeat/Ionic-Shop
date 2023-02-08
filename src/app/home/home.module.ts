@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CustomCommonModule } from '../common/common.module';
+import { ProductDetailsComponent } from '../common/modules/product-details/product-details.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { CustomCommonModule } from '../common/common.module';
     HomePageRoutingModule,
     CustomCommonModule,
   ],
-  declarations: [HomePage],
+  declarations: [HomePage, ProductDetailsComponent],
 })
 export class HomePageModule {}

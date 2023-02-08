@@ -28,6 +28,7 @@
     <app-horizontal-list
       [listItems]="mostPopularProducts"
       [listModel]="mostPopularProductsHorizontalModel"
+      [modalComponent]="productDetailComponent"
     ></app-horizontal-list>
   </section>
   <section class="section-container vertical-list" *ngIf="productsTypes.length">

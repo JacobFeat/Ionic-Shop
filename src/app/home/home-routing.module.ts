@@ -8,13 +8,6 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'categories/:categoryId/product-types/:typeId/product-details/:productId',
-    loadChildren: () =>
-      import('../common/modules/product-details/product-details.module').then(
-        (m) => m.ProductDetailsPageModule
-      ),
-  },
-  {
     path: 'categories/:categoryId/product-types/:typeId',
     loadChildren: () =>
       import('./product-types/product-types.module').then(

@@ -1,5 +1,3 @@
-import { CategoryKeys } from 'src/app/common/defs/category.defs';
-import { Product, ProductKeys } from 'src/app/common/defs/product-defs';
 import { HorizontalListItem } from 'src/app/common/modules/horizontal-list/horizontal-list.defs';
 
 export class HomeListsModel {
@@ -10,11 +8,7 @@ export class HomeListsModel {
       secondLine: 'price',
       imgUrl: 'imgUrl',
       imgAlt: 'name',
-      routing: [
-        { pathName: 'categories', idName: 'category_id' },
-        { pathName: 'product-types', idName: 'type_id' },
-        { pathName: 'product-details', idName: 'id' },
-      ],
+      isModal: true,
     };
   }
 

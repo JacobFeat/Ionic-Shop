@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" defaultHref="home"></ion-back-button>
+      <ion-button (click)="onCancel()">
+        <ion-icon slot="icon-only" icon="assets/icon/close.svg"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button>
@@ -15,17 +17,15 @@
   <ion-grid>
     <ion-row>
       <ion-col class="img-wrapper">
-        <img [src]="currentProduct?.imgUrl" alt="" />
+        <img [src]="product?.imgUrl" alt="" />
       </ion-col>
     </ion-row>
     <div class="section-container">
       <ion-row>
-        <ion-col class="product-name">{{ currentProduct?.name }}</ion-col>
+        <ion-col class="product-name">{{ product?.name }}</ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="product-price"
-          >{{ currentProduct?.price | currency }}</ion-col
-        >
+        <ion-col class="product-price">{{ product?.price | currency }}</ion-col>
       </ion-row>
       <ion-row>
         <ion-col class="check-availability-wrapper">
@@ -36,10 +36,15 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="product-description"
-          >{{ currentProduct?.description }}</ion-col
-        >
+        <ion-col class="product-description">{{
+          product?.description
+        }}</ion-col>
       </ion-row>
     </div>
   </ion-grid>
 </ion-content>
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

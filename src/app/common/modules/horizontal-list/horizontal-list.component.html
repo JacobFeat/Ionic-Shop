@@ -5,6 +5,7 @@
   <swiper [config]="config">
     <ng-template swiperSlide *ngFor="let item of listItems">
       <ion-card
+        (click)="openModal(item)"
         [routerLink]="routeInListModelExists() ? setRouterPath(item) : []"
       >
         <img
