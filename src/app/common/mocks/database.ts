@@ -7,7 +7,8 @@ export const products: Product[] = [
   {
     id: 1,
     name: 'Kurtka puchowa',
-    description: 'Idealna na zimowe wyjścia, ta ciepła kurtka puchowa zapewni ochronę przed niskimi temperaturami. Wysoka jakość wykonania i trwałe materiały zapewniają komfort noszenia i długotrwałą wytrzymałość.',
+    description:
+      'Idealna na zimowe wyjścia, ta ciepła kurtka puchowa zapewni ochronę przed niskimi temperaturami. Wysoka jakość wykonania i trwałe materiały zapewniają komfort noszenia i długotrwałą wytrzymałość.',
     price: 199.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/8.jpg',
@@ -17,7 +18,8 @@ export const products: Product[] = [
   {
     id: 2,
     name: 'Koszulka z nadrukiem',
-    description: 'Ta modna koszulka z nadrukiem to doskonały wybór na lato. Wykonana z miękkiej i przewiewnej tkaniny zapewnia komfort noszenia przez cały dzień. Nadruk jest trwały i nie blaknie po wielu praniach.',
+    description:
+      'Ta modna koszulka z nadrukiem to doskonały wybór na lato. Wykonana z miękkiej i przewiewnej tkaniny zapewnia komfort noszenia przez cały dzień. Nadruk jest trwały i nie blaknie po wielu praniach.',
     price: 59.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/9.jpg',
@@ -27,7 +29,8 @@ export const products: Product[] = [
   {
     id: 3,
     name: 'Bluza z kapturem',
-    description: 'Ta wygodna bluza z kapturem jest idealna na codzienne wyjścia. Wykonana z miękkiej tkaniny zapewnia komfort noszenia, a kaptur dodatkowo chroni przed wiatrem i deszczem. Dostępna w kilku rozmiarach dla wygodnego dopasowania.',
+    description:
+      'Ta wygodna bluza z kapturem jest idealna na codzienne wyjścia. Wykonana z miękkiej tkaniny zapewnia komfort noszenia, a kaptur dodatkowo chroni przed wiatrem i deszczem. Dostępna w kilku rozmiarach dla wygodnego dopasowania.',
     price: 89.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/4.jpg',
@@ -37,7 +40,8 @@ export const products: Product[] = [
   {
     id: 4,
     name: 'Spodnie dresowe',
-    description: 'Te wygodne spodnie dresowe są idealne na trening lub codzienne noszenie. Materiał jest miękki i elastyczny, co zapewnia swobodę ruchów i komfort noszenia. Dostępne w kilku rozmiarach dla wygodnego dopasowania.',
+    description:
+      'Te wygodne spodnie dresowe są idealne na trening lub codzienne noszenie. Materiał jest miękki i elastyczny, co zapewnia swobodę ruchów i komfort noszenia. Dostępne w kilku rozmiarach dla wygodnego dopasowania.',
     price: 129.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/16.jpg',
@@ -47,7 +51,8 @@ export const products: Product[] = [
   {
     id: 5,
     name: 'Sukienka letnia',
-    description: 'Elegancka i kobieca sukienka na lato, wykonana z przewiewnych i lekkich materiałów. Ozdobiona modnym wzorem i dostępna w kilku rozmiarach (S, M, L). Idealna na wakacje, plażę lub letnie wyjścia.',
+    description:
+      'Elegancka i kobieca sukienka na lato, wykonana z przewiewnych i lekkich materiałów. Ozdobiona modnym wzorem i dostępna w kilku rozmiarach (S, M, L). Idealna na wakacje, plażę lub letnie wyjścia.',
     price: 149.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/2.jpg',
@@ -57,7 +62,8 @@ export const products: Product[] = [
   {
     id: 6,
     name: 'Buty treningowe',
-    description: 'Doskonałe buty treningowe dla biegaczy i aktywnych sportowców. Wzmocniona podeszwa i amortyzująca wkładka zapewniają komfort i ochronę dla stóp.',
+    description:
+      'Doskonałe buty treningowe dla biegaczy i aktywnych sportowców. Wzmocniona podeszwa i amortyzująca wkładka zapewniają komfort i ochronę dla stóp.',
     price: 249.99,
     availableSizes: ['S', 'M', 'L'],
     imgUrl: '../../../assets/mockImages/20.jpg',
@@ -215,10 +221,16 @@ export function getCategoryNameById(categoryId: number): string {
 
 export function getTheMostPopularProducts(): Product[] {
   const theMostPopularProductsIds = [4, 5, 6, 3];
+  return getAllProductsByIds(theMostPopularProductsIds);
+}
 
-  return [...products].filter((product) =>
-    theMostPopularProductsIds.includes(product.id)
-  );
+export function specialForYouProducts(): Product[] {
+  const specialForYouProductsIds = [1, 2, 5, 6];
+  return getAllProductsByIds(specialForYouProductsIds);
+}
+
+function getAllProductsByIds(productsIds: number[]): Product[] {
+  return [...products].filter((product) => productsIds.includes(product.id));
 }
 
 export function getProductById(productId: number) {

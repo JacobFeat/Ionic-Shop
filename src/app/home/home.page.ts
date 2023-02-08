@@ -14,11 +14,11 @@ import { HomeListsModel } from './models/home-lists.model';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  protected products!: Product[];
+  protected specialForYouProducts!: Product[];
   protected categoriesForYou!: CategoryForYou[];
   protected categories!: Category[];
   protected ads!: Ad[];
-  protected productsHorizontalModel!: HorizontalListItem;
+  protected specialForYouProductsHorizontalModel!: HorizontalListItem;
   protected categoriesForYouHorizontalModel!: HorizontalListItem;
 
   constructor(
@@ -33,14 +33,14 @@ export class HomePage implements OnInit {
   }
 
   initData(): void {
-    this.products = this.productsService.products;
+    this.specialForYouProducts = this.productsService.specialForYouProducts;
     this.categories = this.categoriesService.categories;
     this.categoriesForYou = this.categoriesService.categoriesForYou;
     this.ads = this.adsService.ads;
   }
 
   private getHorizontalListModels(): void {
-    this.productsHorizontalModel = HomeListsModel.getProductsHorizontalModel();
+    this.specialForYouProductsHorizontalModel = HomeListsModel.getProductsHorizontalModel();
     this.categoriesForYouHorizontalModel =
       HomeListsModel.getCategoriesForYouHorizontalModel();
   }

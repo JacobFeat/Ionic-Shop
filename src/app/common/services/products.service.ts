@@ -4,6 +4,7 @@ import {
   getProductById,
   getTheMostPopularProducts as getTheMostPopularProducts,
   products,
+  specialForYouProducts,
 } from '../mocks/database';
 
 @Injectable({
@@ -16,6 +17,10 @@ export class ProductsService {
 
   get theMostPopularProducts() {
     return getTheMostPopularProducts();
+  }
+
+  get specialForYouProducts() {
+    return specialForYouProducts();
   }
 
   getProductById(productId: number) {
