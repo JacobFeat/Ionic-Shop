@@ -1,14 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button
-        text=""
-        defaultHref="home"
-      ></ion-back-button>
+      <ion-back-button text="" defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon slot="icon-only" icon="assets/icon/bag.svg" ></ion-icon>
+        <ion-icon slot="icon-only" icon="assets/icon/bag.svg"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -23,16 +20,23 @@
     </ion-row>
     <div class="section-container">
       <ion-row>
-        <ion-col>{{ currentProduct?.name }}</ion-col>
+        <ion-col class="product-name">{{ currentProduct?.name }}</ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>{{ currentProduct?.price }}</ion-col>
+        <ion-col class="product-price">{{ currentProduct?.price }}</ion-col>
       </ion-row>
       <ion-row>
-        <ion-col><button>Sprawdź dostępność w sklepie</button></ion-col>
+        <ion-col class="check-availability-wrapper">
+          <ion-button class="check-availability-btn">
+            <ion-icon slot="start" icon="assets/icon/shop.svg"></ion-icon>
+            Sprawdź dostępność w sklepie
+          </ion-button>
+        </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>{{ currentProduct?.description }}</ion-col>
+        <ion-col class="product-description"
+          >{{ currentProduct?.description }}</ion-col
+        >
       </ion-row>
     </div>
   </ion-grid>

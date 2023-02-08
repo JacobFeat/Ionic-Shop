@@ -33,3 +33,38 @@ ion-grid,
   min-width: 100%;
   object-fit: cover;
 }
+
+.section-container {
+  margin-top: 20px;
+}
+
+ion-col {
+  padding: 0;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+
+.product-price {
+  font-size: 16px;
+}
+
+.product-description {
+  font-size: 12px;
+}
+
+.check-availability-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.check-availability-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ion-color-primary);
+  --background: none;
+}

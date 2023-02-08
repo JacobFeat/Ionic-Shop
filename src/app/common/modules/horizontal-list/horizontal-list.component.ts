@@ -31,7 +31,7 @@ export class HorizontalListComponent implements OnInit {
 
   protected setRouterPath(item: any): string {
     if (this.listModel.idName) {
-      return this.listModel.route + '/' + item[this.listModel.idName];
+      return `${this.listModel.route}/${item[this.listModel.idName]}`
     }
     return '';
   }
