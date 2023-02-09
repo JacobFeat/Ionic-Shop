@@ -1,3 +1,32 @@
+.filters {
+  ion-button {
+    display: block;
+    margin: 0 auto 16px;
+    --background: none;
+    --background-activated: none;
+    --color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  ion-icon {
+    margin-left: 16px;
+  }
+}
+
+.counter {
+  margin-bottom: 10px;
+
+  ion-text {
+    font-size: 14px;
+    text-align: right;
+  }
+}
+
+ion-grid {
+  padding: 0 19px;
+}
+
 ion-card {
   --background: none;
   box-shadow: none;
@@ -8,6 +37,7 @@ ion-card {
     height: 255px;
     width: 100%;
     object-fit: cover;
+    object-position: top;
   }
 }
 

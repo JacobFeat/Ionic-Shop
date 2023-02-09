@@ -114,6 +114,39 @@ export const products: Product[] = [
     type_id: 4,
     category_id: 1,
   },
+  {
+    id: 11,
+    name: 'Kurtka zimowa z futerkiem',
+    description:
+      'Ciepła i stylowa kurtka zimowa z futerkiem, idealna na największe mrozy. Ocieplenie zapewnia maksymalną izolację termiczną, a dodatkowe elementy, takie jak kaptur i wewnętrzne kieszenie, dodają dodatkowy komfort i praktyczność.',
+    price: 299.99,
+    availableSizes: ['S', 'M', 'L', 'XL'],
+    imgUrl: '../../../assets/mockImages/2.jpg',
+    type_id: 1,
+    category_id: 1,
+  },
+  {
+    id: 12,
+    name: 'Kurtka z kapturem',
+    description:
+      'Lekka i wygodna kurtka z kapturem, idealna na jesienne wieczory. Kaptur i wewnętrzne kieszenie dodają dodatkowy komfort, a materiał jest wodoodporny i odporny na wiatr.',
+    price: 199.99,
+    availableSizes: ['S', 'M', 'L'],
+    imgUrl: '../../../assets/mockImages/12.jpg',
+    type_id: 1,
+    category_id: 1,
+  },
+  {
+    id: 13,
+    name: 'Kurtka pikowana',
+    description:
+      'Modna i stylowa kurtka pikowana, doskonała na jesienne wieczory. Materiał jest wodoodporny i odporny na wiatr, a kieszenie i zapięcie na suwak dodają dodatkową praktyczność.',
+    price: 199.99,
+    availableSizes: ['S', 'M', 'L', 'XL'],
+    imgUrl: '../../../assets/mockImages/13.jpg',
+    type_id: 1,
+    category_id: 1,
+  },
 ];
 
 export const types: Type[] = [

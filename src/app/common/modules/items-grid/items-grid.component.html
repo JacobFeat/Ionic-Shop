@@ -1,7 +1,22 @@
 <ion-grid>
+  <ion-row class="filters">
+    <ion-col>
+      <ion-button>
+        Filtrowanie i sortowanie
+        <ion-icon icon="assets/icon/filter.svg"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="counter">
+    <ion-col>
+      <ion-text color="secondary"
+        >{{ products.length }} rzeczy
+      </ion-text></ion-col
+    >
+  </ion-row>
   <ion-row>
     <ion-col *ngFor="let product of products" size="6">
-      <ion-card>
+      <ion-card (click)="openModal(product)">
         <img [alt]="product" [src]="product.imgUrl" />
         <ion-card-content>
           <ion-text color="secondary" class="card-title">{{
