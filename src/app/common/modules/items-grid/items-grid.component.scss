@@ -1,0 +1,27 @@
+ion-card {
+  --background: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+
+  img {
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+ion-card-content {
+  padding: 14px 0;
+}
+
+ion-text {
+  display: block;
+  font-size: 12px;
+  text-align: left;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+}

@@ -16,4 +16,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <!-- <p *ngFor="let product of products">{{ product.name }}</p> -->
+  <app-items-grid [products]="products"></app-items-grid>
+</ion-content>

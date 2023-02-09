@@ -1,0 +1,17 @@
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let product of products" size="6">
+      <ion-card>
+        <img [alt]="product" [src]="product.imgUrl" />
+        <ion-card-content>
+          <ion-text color="secondary" class="card-title">{{
+            product.name
+          }}</ion-text>
+          <ion-text color="secondary" class="card-subtitle">{{
+            product.price
+          }}</ion-text>
+        </ion-card-content>
+      </ion-card></ion-col
+    >
+  </ion-row>
+</ion-grid>

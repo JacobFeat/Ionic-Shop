@@ -90,7 +90,7 @@ export const products: Product[] = [
     availableSizes: ['S', 'M', 'L', 'XL'],
     imgUrl: '../../../assets/mockImages/3.jpg',
     type_id: 1,
-    category_id: 1,
+    category_id: 2,
   },
   {
     id: 9,
@@ -248,7 +248,7 @@ export function getAvailableTypesInCategory(categoryId: number): Type[] {
 }
 
 function findAllProductsInCategoryById(categoryId: number): Product[] {
-  return products.filter((product) => product.category_id === categoryId);
+  return [...products].filter((product) => product.category_id === categoryId);
 }
 
 function getAvailableTypesIdByProducts(products: Product[]): number[] {
@@ -256,11 +256,11 @@ function getAvailableTypesIdByProducts(products: Product[]): number[] {
 }
 
 function getAllTypesById(typeIdsCollection: number[]): Type[] {
-  return types.filter((type) => typeIdsCollection.includes(type.id));
+  return [...types].filter((type) => typeIdsCollection.includes(type.id));
 }
 
 export function getCategoryNameById(categoryId: number): string {
-  return categories.find((category) => category.id === categoryId)!.name;
+  return [...categories].find((category) => category.id === categoryId)!.name;
 }
 
 export function getTheMostPopularProducts(): Product[] {
@@ -278,9 +278,23 @@ function getAllProductsByIds(productsIds: number[]): Product[] {
 }
 
 export function getProductById(productId: number) {
-  return products.find((product) => product.id === productId);
+  return [...products].find((product) => product.id === productId);
 }
 
 export function getProductTypeById(typeId: number): Type | undefined {
-  return types.find((type) => type.id === typeId);
+  return [...types].find((type) => type.id === typeId);
+}
+
+export function getAllProductsByTypeId(typeId: number): Product[] {
+  return [...products].filter((product) => product.type_id === typeId);
+}
+
+export function getAllProductsByCategoryAndTypeId(
+  categoryId: number,
+  typeId: number
+): Product[] {
+  return [...products].filter(
+    (product) =>
+      product.category_id === categoryId && product.type_id === typeId
+  );
 }
