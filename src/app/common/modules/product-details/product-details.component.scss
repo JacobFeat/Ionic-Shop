@@ -74,7 +74,42 @@ ion-col {
   --background-activated: none;
 }
 
-ion-footer {
-  border-top: 0.5px solid var(--ion-color-medium);
-  height: 50px;
+ion-footer ion-toolbar {
+  display: flex;
+  height: 60px;
+  padding: 6px 19px;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --min-height: 0;
+
+
+  ion-buttons {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .btn {
+    height: 40px;
+    font-size: 12px;
+    flex: 1 1 50%;
+  }
+
+  .btn-choose {
+    border: 1px solid var(--ion-color-medium);
+
+    ion-icon {
+      max-height: 16px;
+      margin-left: 4px;
+    }
+  }
+
+  .btn-add {
+    background-color: black;
+    --color: var(--ion-color-primary-contrast);
+
+    ion-icon {
+      max-height: 22px;
+      margin-right: 4px;
+    }
+  }
 }
