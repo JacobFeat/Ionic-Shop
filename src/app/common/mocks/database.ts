@@ -10,7 +10,7 @@ export const products: Product[] = [
     description:
       'Idealna na zimowe wyjścia, ta ciepła kurtka puchowa zapewni ochronę przed niskimi temperaturami. Wysoka jakość wykonania i trwałe materiały zapewniają komfort noszenia i długotrwałą wytrzymałość.',
     price: 199.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['S', 'M', 'L', 'XL'],
     imgUrl: '../../../assets/mockImages/8.jpg',
     type_id: 1,
     category_id: 1,
@@ -21,7 +21,7 @@ export const products: Product[] = [
     description:
       'Ta modna koszulka z nadrukiem to doskonały wybór na lato. Wykonana z miękkiej i przewiewnej tkaniny zapewnia komfort noszenia przez cały dzień. Nadruk jest trwały i nie blaknie po wielu praniach.',
     price: 59.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['S', 'L'],
     imgUrl: '../../../assets/mockImages/9.jpg',
     type_id: 1,
     category_id: 1,
@@ -32,7 +32,7 @@ export const products: Product[] = [
     description:
       'Ta wygodna bluza z kapturem jest idealna na codzienne wyjścia. Wykonana z miękkiej tkaniny zapewnia komfort noszenia, a kaptur dodatkowo chroni przed wiatrem i deszczem. Dostępna w kilku rozmiarach dla wygodnego dopasowania.',
     price: 89.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['M', 'L'],
     imgUrl: '../../../assets/mockImages/4.jpg',
     type_id: 3,
     category_id: 1,
@@ -43,7 +43,7 @@ export const products: Product[] = [
     description:
       'Te wygodne spodnie dresowe są idealne na trening lub codzienne noszenie. Materiał jest miękki i elastyczny, co zapewnia swobodę ruchów i komfort noszenia. Dostępne w kilku rozmiarach dla wygodnego dopasowania.',
     price: 129.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['S', 'M'],
     imgUrl: '../../../assets/mockImages/16.jpg',
     type_id: 4,
     category_id: 1,
@@ -54,7 +54,7 @@ export const products: Product[] = [
     description:
       'Elegancka i kobieca sukienka na lato, wykonana z przewiewnych i lekkich materiałów. Ozdobiona modnym wzorem i dostępna w kilku rozmiarach (S, M, L). Idealna na wakacje, plażę lub letnie wyjścia.',
     price: 149.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['S', 'XXL', 'XL'],
     imgUrl: '../../../assets/mockImages/2.jpg',
     type_id: 5,
     category_id: 2,
@@ -65,7 +65,7 @@ export const products: Product[] = [
     description:
       'Doskonałe buty treningowe dla biegaczy i aktywnych sportowców. Wzmocniona podeszwa i amortyzująca wkładka zapewniają komfort i ochronę dla stóp.',
     price: 249.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['M', 'L'],
     imgUrl: '../../../assets/mockImages/20.jpg',
     type_id: 6,
     category_id: 1,
@@ -87,7 +87,7 @@ export const products: Product[] = [
     description:
       'Lekka i przewiewna koszulka bez rękawów, idealna na lato. Wykonana z delikatnej tkaniny i ozdobiona modnym nadrukiem, doskonale sprawdzi się w ciepłe dni.',
     price: 29.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['S', 'M', 'L', 'XL'],
     imgUrl: '../../../assets/mockImages/3.jpg',
     type_id: 1,
     category_id: 1,
@@ -98,7 +98,7 @@ export const products: Product[] = [
     description:
       'Wygodna bluza z kieszeniami i wysokim kołnierzem, idealna na codzienne wyjścia. Wykonana z miękkiej tkaniny i ozdobiona modnymi aplikacjami, zapewnia komfort i stylowy wygląd.',
     price: 119.99,
-    availableSizes: ['S', 'M', 'L'],
+    availableSizes: ['L', 'XXL'],
     imgUrl: '../../../assets/mockImages/5.jpg',
     type_id: 3,
     category_id: 1,
@@ -264,7 +264,7 @@ export function getCategoryNameById(categoryId: number): string {
 }
 
 export function getTheMostPopularProducts(): Product[] {
-  const theMostPopularProductsIds = [4, 5, 6, 3];
+  const theMostPopularProductsIds = [4, 5, 7, 3];
   return getAllProductsByIds(theMostPopularProductsIds);
 }
 

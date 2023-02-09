@@ -96,10 +96,12 @@ ion-footer ion-toolbar {
 
   .btn-choose {
     border: 1px solid var(--ion-color-medium);
+    --padding-start: 12px;
+    --padding-end: 10px;
 
     ion-icon {
       max-height: 16px;
-      margin-left: 4px;
+      margin-left: auto;
     }
   }
 
