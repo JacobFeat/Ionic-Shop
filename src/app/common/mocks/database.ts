@@ -70,6 +70,50 @@ export const products: Product[] = [
     type_id: 6,
     category_id: 1,
   },
+  {
+    id: 7,
+    name: 'Kurtka skórzana',
+    description:
+      'Modna i trwała kurtka skórzana, idealna na chłodniejsze dni. Wykonana z wysokiej jakości skóry i wyposażona w ocieplenie, zapewnia ochronę przed niskimi temperaturami.',
+    price: 399.99,
+    availableSizes: ['S', 'M', 'L'],
+    imgUrl: '../../../assets/mockImages/1.jpg',
+    type_id: 1,
+    category_id: 1,
+  },
+  {
+    id: 8,
+    name: 'Koszulka bez rękawów',
+    description:
+      'Lekka i przewiewna koszulka bez rękawów, idealna na lato. Wykonana z delikatnej tkaniny i ozdobiona modnym nadrukiem, doskonale sprawdzi się w ciepłe dni.',
+    price: 29.99,
+    availableSizes: ['S', 'M', 'L'],
+    imgUrl: '../../../assets/mockImages/3.jpg',
+    type_id: 1,
+    category_id: 1,
+  },
+  {
+    id: 9,
+    name: 'Bluza z kieszeniami',
+    description:
+      'Wygodna bluza z kieszeniami i wysokim kołnierzem, idealna na codzienne wyjścia. Wykonana z miękkiej tkaniny i ozdobiona modnymi aplikacjami, zapewnia komfort i stylowy wygląd.',
+    price: 119.99,
+    availableSizes: ['S', 'M', 'L'],
+    imgUrl: '../../../assets/mockImages/5.jpg',
+    type_id: 3,
+    category_id: 1,
+  },
+  {
+    id: 10,
+    name: 'Spodnie dżinsowe',
+    description:
+      'Modne i wygodne spodnie dżinsowe, idealne na codzienne noszenie. Wykonane z trwałego materiału i ozdobione modnymi aplikacjami, zapewniają stylowy wygląd i wygodę noszenia.',
+    price: 99.99,
+    availableSizes: ['S', 'M', 'L'],
+    imgUrl: '../../../assets/mockImages/6.jpg',
+    type_id: 4,
+    category_id: 1,
+  },
 ];
 
 export const types: Type[] = [
