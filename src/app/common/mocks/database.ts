@@ -271,8 +271,37 @@ export const ads: Ad[] = [
     imgUrl: '/assets/mockImages/20.jpg',
     title: 'The suitmen x Graysh',
     height: 440,
+    categoryId: 1,
+  },
+  {
+    imgUrl: '/assets/mockImages/9.jpg',
+    title: 'The women x Graysh',
+    height: 440,
+    categoryId: 2,
+  },
+  {
+    imgUrl: '/assets/mockImages/3.jpg',
+    title: 'The pyjamas x Children',
+    height: 440,
+    categoryId: 3,
+  },
+  {
+    imgUrl: '/assets/mockImages/ad11.jpg',
+    title: 'Home x Graysh',
+    height: 440,
+    categoryId: 4,
+  },
+  {
+    imgUrl: '/assets/mockImages/21.jpg',
+    title: 'Let\'s Sport',
+    height: 440,
+    categoryId: 5,
   },
 ];
+
+export function getAdByCategoryId(categoryId: number): Ad | undefined {
+  return ads.find((ad) => ad.categoryId === categoryId);
+}
 
 export function getAvailableTypesInCategory(categoryId: number): Type[] {
   const productsInCategory = findAllProductsInCategoryById(categoryId);

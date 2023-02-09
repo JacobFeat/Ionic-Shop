@@ -22,7 +22,7 @@ export class CategoriesPage implements OnInit {
   protected categoryId!: number;
   protected productsTypes!: Type[];
   protected categoryName!: string;
-  protected ads!: Ad[];
+  protected ad!: Ad | undefined;
   protected mostPopularProducts!: Product[];
   protected mostPopularProductsHorizontalModel!: HorizontalListItem;
   protected productDetailComponent = ProductDetailsComponent;
@@ -39,9 +39,12 @@ export class CategoriesPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap) => {
       if (!paramMap.has(this.paramName)) this.navigateBackToHome();
-      this.initDataFromRouterParam(paramMap);
+
+      this.categoryId = Number(paramMap.get(this.paramName));
+      this.initDataFromRouterParam();
       this.initDataFromDb();
       this.getHorizontalListModels();
+      this.ad = this.getAdByCategoryId();
     });
   }
 
@@ -49,20 +52,25 @@ export class CategoriesPage implements OnInit {
     return this.navCtrl.navigateBack('/home');
   }
 
-  private initDataFromRouterParam(paramMap: ParamMap): void {
-    this.categoryId = Number(paramMap.get(this.paramName));
-    this.productsTypes =
-      this.typesService.getAvailableTypesInCategory(this.categoryId);
-    this.categoryName = this.categoriesService.getCategoryNameById(this.categoryId);
+  private initDataFromRouterParam(): void {
+    this.productsTypes = this.typesService.getAvailableTypesInCategory(
+      this.categoryId
+    );
+    this.categoryName = this.categoriesService.getCategoryNameById(
+      this.categoryId
+    );
   }
 
   private initDataFromDb(): void {
-    this.ads = this.adsService.ads;
     this.mostPopularProducts = this.productsService.theMostPopularProducts;
   }
 
   private getHorizontalListModels(): void {
     this.mostPopularProductsHorizontalModel =
       CategoriesListsModel.getMostPopularProductsHorizontalModel();
+  }
+
+  private getAdByCategoryId(): Ad | undefined {
+    return this.adsService.getAdByCategoryId(this.categoryId);
   }
 }

@@ -21,8 +21,8 @@
 </ion-header>
 
 <ion-content>
-  <section class="section-container">
-    <app-ad-banner [ad]="ads[2]"></app-ad-banner>
+  <section class="section-container" *ngIf="ad">
+    <app-ad-banner [ad]="ad"></app-ad-banner>
   </section>
   <section class="section-container">
     <app-horizontal-list

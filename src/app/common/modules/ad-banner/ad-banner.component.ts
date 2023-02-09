@@ -7,7 +7,7 @@ import { Ad } from '../../defs/ad.defs';
   styleUrls: ['./ad-banner.component.scss'],
 })
 export class AdBannerComponent implements OnInit {
-  @Input() ad!: Ad;
+  @Input() ad!: Ad | undefined;
 
   constructor() {}
 

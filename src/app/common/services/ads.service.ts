@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Ad } from '../defs/ad.defs';
-import { ads } from '../mocks/database';
+import { ads, getAdByCategoryId } from '../mocks/database';
 
 @Injectable({
   providedIn: 'root',
@@ -8,5 +8,9 @@ import { ads } from '../mocks/database';
 export class AdsService {
   get ads(): Ad[] {
     return ads;
+  }
+
+  getAdByCategoryId(categoryId: number): Ad | undefined {
+    return getAdByCategoryId(categoryId);
   }
 }
