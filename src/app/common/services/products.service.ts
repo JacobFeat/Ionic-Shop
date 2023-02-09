@@ -4,7 +4,7 @@ import {
   getAllProductsByCategoryAndTypeId,
   getAllProductsByTypeId,
   getProductById,
-  getTheMostPopularProducts,
+  getTheMostPopularProductsByCategoryId,
   products,
   specialForYouProducts,
 } from '../mocks/database';
@@ -17,8 +17,8 @@ export class ProductsService {
     return products;
   }
 
-  get theMostPopularProducts() {
-    return getTheMostPopularProducts();
+  getTheMostPopularProductsByCategoryId(categoryId: number) {
+    return getTheMostPopularProductsByCategoryId(categoryId);
   }
 
   get specialForYouProducts() {

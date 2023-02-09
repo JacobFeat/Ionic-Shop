@@ -42,7 +42,7 @@ export class CategoriesPage implements OnInit {
 
       this.categoryId = Number(paramMap.get(this.paramName));
       this.initDataFromRouterParam();
-      this.initDataFromDb();
+      this.initTheMostPopularProductsForThisCategory();
       this.getHorizontalListModels();
       this.ad = this.getAdByCategoryId();
     });
@@ -61,8 +61,11 @@ export class CategoriesPage implements OnInit {
     );
   }
 
-  private initDataFromDb(): void {
-    this.mostPopularProducts = this.productsService.theMostPopularProducts;
+  private initTheMostPopularProductsForThisCategory(): void {
+    this.mostPopularProducts =
+      this.productsService.getTheMostPopularProductsByCategoryId(
+        this.categoryId
+      );
   }
 
   private getHorizontalListModels(): void {

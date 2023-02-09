@@ -293,7 +293,7 @@ export const ads: Ad[] = [
   },
   {
     imgUrl: '/assets/mockImages/21.jpg',
-    title: 'Let\'s Sport',
+    title: "Let's Sport",
     height: 440,
     categoryId: 5,
   },
@@ -325,9 +325,33 @@ export function getCategoryNameById(categoryId: number): string {
   return [...categories].find((category) => category.id === categoryId)!.name;
 }
 
-export function getTheMostPopularProducts(): Product[] {
-  const theMostPopularProductsIds = [4, 5, 7, 3];
-  return getAllProductsByIds(theMostPopularProductsIds);
+export function getTheMostPopularProductsByCategoryId(categoryId: number): Product[] {
+  const theMostPopularProductsSet = [
+    {
+      categoryId: 1,
+      products: [4, 5, 7, 3],
+    },
+    {
+      categoryId: 2,
+      products: [2, 4, 3, 1],
+    },
+    {
+      categoryId: 3,
+      products: [8, 9, 10, 11],
+    },
+    {
+      categoryId: 4,
+      products: [1, 2, 3, 4],
+    },
+    {
+      categoryId: 5,
+      products: [5, 6, 7, 8],
+    },
+  ];
+  const theMostPopularProductsForCategoryId = theMostPopularProductsSet.find(
+    (set) => set.categoryId === categoryId
+  )!.products;
+  return getAllProductsByIds(theMostPopularProductsForCategoryId);
 }
 
 export function specialForYouProducts(): Product[] {
