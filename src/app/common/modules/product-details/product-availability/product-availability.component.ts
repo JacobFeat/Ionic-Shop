@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
 import { Coordinates } from 'src/app/common/defs/location.defs';
-import { Product } from 'src/app/common/defs/product-defs';
-import { Shop } from 'src/app/common/defs/shops.defs';
+import { Product, ProductSize } from 'src/app/common/defs/product-defs';
+import { Shop, ShopWithDistanceFromUser } from 'src/app/common/defs/shops.defs';
+import { MapsService } from 'src/app/common/services/maps.service';
 import { ShopsService } from 'src/app/common/services/shop.service';
 
 @Component({
@@ -14,17 +14,48 @@ export class ProductAvailabilityComponent implements OnInit {
   @Input() product!: Product;
   @Input() userLocation!: Coordinates;
 
-  protected shops!: Shop[];
-  protected availableSizesInShops!: any;
+  protected shops!: ShopWithDistanceFromUser[];
+  protected availableSizesInShops!: ProductSize[];
 
   constructor(
-    private modalCtrl: ModalController,
-    private shopsService: ShopsService
+    private shopsService: ShopsService,
+    private mapsService: MapsService
   ) {}
 
   ngOnInit() {
-    this.shops = this.getShopsWithAvailableProduct(this.product.id);
-    console.log(this.userLocation);
+    this.initShopsListWithTransformations();
+  }
+
+  private initShopsListWithTransformations(): void {
+    (this.shops as Shop[]) = this.getShopsWithAvailableProduct(this.product.id);
+    this.shops = this.addDistanceFromUserToShop(this.shops);
+    this.shops = this.sortByDistanceFromUser(this.shops);
+  }
+
+  private sortByDistanceFromUser(shops: ShopWithDistanceFromUser[]) {
+    return shops.sort((a, b) => a.distanceFromUser - b.distanceFromUser);
+  }
+
+  private addDistanceFromUserToShop(shops: Shop[]): ShopWithDistanceFromUser[] {
+    return shops.map((shop) => {
+      return {
+        ...shop,
+        distanceFromUser: this.distanceBetweenTwoPointsOnMap(
+          this.userLocation,
+          shop.coordinates
+        ),
+      };
+    });
+  }
+
+  private distanceBetweenTwoPointsOnMap(
+    originPlace: Coordinates,
+    destinationPlace: Coordinates
+  ): number {
+    return this.mapsService.distanceBetweenTwoPointsOnMap(
+      originPlace,
+      destinationPlace
+    );
   }
 
   private getShopsWithAvailableProduct(productId: number): Shop[] {

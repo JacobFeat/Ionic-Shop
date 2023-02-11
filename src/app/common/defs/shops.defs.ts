@@ -15,6 +15,10 @@ export interface Shop {
   };
 }
 
+export interface ShopWithDistanceFromUser extends Shop {
+  distanceFromUser: number;
+}
+
 interface AvailableProduct {
   id: number;
   availableSizes: ProductSize[];

@@ -54,7 +54,7 @@ export const products: Product[] = [
     description:
       'Elegancka i kobieca sukienka na lato, wykonana z przewiewnych i lekkich materiałów. Ozdobiona modnym wzorem i dostępna w kilku rozmiarach (S, M, L). Idealna na wakacje, plażę lub letnie wyjścia.',
     price: 149.99,
-    availableSizes: ['S', 'XXL', 'XL'],
+    availableSizes: ['S', 'XL', 'XXL'],
     imgUrl: '../../../assets/mockImages/2.jpg',
     type_id: 5,
     category_id: 2,
