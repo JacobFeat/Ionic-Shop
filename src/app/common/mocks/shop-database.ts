@@ -23,6 +23,10 @@ export const shops: Shop[] = [
         availableSizes: ['XL', 'XXL'],
       },
     ],
+    coordinates: {
+      latitude: 50.20375906154616,
+      longitude: 19.267883938630483,
+    },
   },
   {
     name: 'Galeria Bronowice',
@@ -43,6 +47,10 @@ export const shops: Shop[] = [
         availableSizes: ['M', 'XL'],
       },
     ],
+    coordinates: {
+      latitude: 51.20375906154616,
+      longitude: 18.267883938630483,
+    },
   },
   {
     name: 'Galeria Ruczaj',
@@ -66,6 +74,10 @@ export const shops: Shop[] = [
         availableSizes: ['S', 'L'],
       },
     ],
+    coordinates: {
+      latitude: 52.20375906154616,
+      longitude: 18.267883938630483,
+    },
   },
   {
     name: 'Galeria Kazimierz',
@@ -89,6 +101,10 @@ export const shops: Shop[] = [
         availableSizes: ['M', 'XL'],
       },
     ],
+    coordinates: {
+      latitude: 51.23375906154616,
+      longitude: 19.3883938630483,
+    },
   },
   {
     name: 'Galeria Słoneczna',
@@ -112,6 +128,10 @@ export const shops: Shop[] = [
         availableSizes: ['XL', 'XXL'],
       },
     ],
+    coordinates: {
+      latitude: 51.20375906154616,
+      longitude: 18.267883938630483,
+    },
   },
   {
     name: 'Galeria Karkonoska',
@@ -132,6 +152,10 @@ export const shops: Shop[] = [
         availableSizes: ['S', 'M'],
       },
     ],
+    coordinates: {
+      latitude: 50.30375906154616,
+      longitude: 19.467883938630483,
+    },
   },
   {
     name: 'Galeria Sudety',
@@ -155,6 +179,10 @@ export const shops: Shop[] = [
         availableSizes: ['XL'],
       },
     ],
+    coordinates: {
+      latitude: 50.50375906154616,
+      longitude: 19.067883938630483,
+    },
   },
   {
     name: 'Galeria Beskidzka',
@@ -178,5 +206,9 @@ export const shops: Shop[] = [
         availableSizes: ['XXL'],
       },
     ],
+    coordinates: {
+      latitude: 50.90375906154616,
+      longitude: 19.367883938630483,
+    },
   },
 ];

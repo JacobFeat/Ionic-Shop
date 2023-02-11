@@ -7,6 +7,8 @@ import {
 import { Product } from '../../defs/product-defs';
 import { ProductAvailabilityComponent } from './product-availability/product-availability.component';
 import { ActionSheetButtonsModel } from './product-details.defs';
+import { Geolocation } from '@capacitor/geolocation';
+import { Coordinates } from '../../defs/location.defs';
 
 @Component({
   selector: 'app-product-details',
@@ -17,6 +19,7 @@ export class ProductDetailsComponent implements OnInit {
   @Input() product!: Product | undefined;
   @ViewChild(IonModal) modal!: IonModal;
 
+  private userLocation!: Coordinates;
   protected size!: number;
 
   constructor(
@@ -24,7 +27,9 @@ export class ProductDetailsComponent implements OnInit {
     private actionSheetCtrl: ActionSheetController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCurrentUserLocation();
+  }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
@@ -43,18 +48,23 @@ export class ProductDetailsComponent implements OnInit {
   async openProductAvailabilityModal() {
     const modal = await this.modalCtrl.create({
       component: ProductAvailabilityComponent,
-      componentProps: { product: this.product },
+      componentProps: {
+        product: this.product,
+        userLocation: this.userLocation,
+      },
       initialBreakpoint: 0.5,
       breakpoints: [0, 0.5, 1],
     });
     modal.present();
 
     const { data, role } = await modal.onWillDismiss();
-
-    if (role === 'confirm') {
-      // this.message = `Hello, ${data}!`;
-    }
   }
+
+  private getCurrentUserLocation = async () => {
+    const coordinates = await Geolocation.getCurrentPosition();
+    const { longitude, latitude } = coordinates.coords;
+    this.userLocation = { longitude, latitude };
+  };
 
   private getAvailableSizesModel(
     product: Product | undefined

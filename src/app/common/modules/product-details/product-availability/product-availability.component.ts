@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Coordinates } from 'src/app/common/defs/location.defs';
 import { Product } from 'src/app/common/defs/product-defs';
 import { Shop } from 'src/app/common/defs/shops.defs';
 import { ShopsService } from 'src/app/common/services/shop.service';
@@ -11,6 +12,7 @@ import { ShopsService } from 'src/app/common/services/shop.service';
 })
 export class ProductAvailabilityComponent implements OnInit {
   @Input() product!: Product;
+  @Input() userLocation!: Coordinates;
 
   protected shops!: Shop[];
   protected availableSizesInShops!: any;
@@ -22,7 +24,7 @@ export class ProductAvailabilityComponent implements OnInit {
 
   ngOnInit() {
     this.shops = this.getShopsWithAvailableProduct(this.product.id);
-    console.log(this.shops);
+    console.log(this.userLocation);
   }
 
   private getShopsWithAvailableProduct(productId: number): Shop[] {

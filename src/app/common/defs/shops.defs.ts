@@ -9,6 +9,10 @@ export interface Shop {
   workHoursWeek: string;
   workHoursSunday: string;
   products: AvailableProduct[];
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
 }
 
 interface AvailableProduct {
