@@ -325,7 +325,9 @@ export function getCategoryNameById(categoryId: number): string {
   return [...categories].find((category) => category.id === categoryId)!.name;
 }
 
-export function getTheMostPopularProductsByCategoryId(categoryId: number): Product[] {
+export function getTheMostPopularProductsByCategoryId(
+  categoryId: number
+): Product[] {
   const theMostPopularProductsSet = [
     {
       categoryId: 1,

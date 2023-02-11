@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sprawdź dostępność w sklepie</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row *ngFor="let shop of shops | slice : 0 : 3" class="shop-container">
+      <ion-col class="shop-info-container">
+        <ion-row>
+          <ion-text class="info-title">{{ shop.name }}</ion-text>
+          <ion-text>ul. {{ shop.street }} {{ shop.buildingNumber }}</ion-text>
+          <ion-text>{{ shop.postCode }} {{ shop.city }}</ion-text>
+        </ion-row>
+        <ion-row>
+          <ion-text class="info-title">Godziny pracy:</ion-text>
+          <ion-text>Pn. - Sb. {{ shop.workHoursWeek }}</ion-text>
+          <ion-text>Nd. {{ shop.workHoursSunday }}</ion-text>
+        </ion-row>
+        <ion-row>
+          <ion-text class="info-title">Odległość:</ion-text>
+          <ion-text>16 km</ion-text>
+        </ion-row>
+      </ion-col>
+      <ion-col class="sizes-container">
+        <ion-row>
+          <ion-text class="info-title">Dostępne rozmiary: </ion-text>
+        </ion-row>
+        <ion-row class="sizes-wrapper">
+          <ion-col
+            class="size-box"
+            *ngFor="let size of shop.products[0].availableSizes"
+          >
+            {{ size }}
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

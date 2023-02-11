@@ -30,7 +30,6 @@ export class ProductTypesPage implements OnInit {
       const categoryId = Number(paramMap.get('categoryId'));
       this.initDataFromRouterParam(typeId);
       this.products = this.getAllProductsForThisSection(categoryId, typeId);
-      console.log(this.products);
     });
   }
 

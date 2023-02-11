@@ -1,6 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  ActionSheetController,
+  IonModal,
+  ModalController,
+} from '@ionic/angular';
 import { Product } from '../../defs/product-defs';
+import { ProductAvailabilityComponent } from './product-availability/product-availability.component';
 import { ActionSheetButtonsModel } from './product-details.defs';
 
 @Component({
@@ -10,6 +15,7 @@ import { ActionSheetButtonsModel } from './product-details.defs';
 })
 export class ProductDetailsComponent implements OnInit {
   @Input() product!: Product | undefined;
+  @ViewChild(IonModal) modal!: IonModal;
 
   protected size!: number;
 
@@ -31,6 +37,22 @@ export class ProductDetailsComponent implements OnInit {
 
     if (result.role === 'setSize') {
       this.size = result.data.size;
+    }
+  }
+
+  async openProductAvailabilityModal() {
+    const modal = await this.modalCtrl.create({
+      component: ProductAvailabilityComponent,
+      componentProps: { product: this.product },
+      initialBreakpoint: 0.5,
+      breakpoints: [0, 0.5, 1],
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+      // this.message = `Hello, ${data}!`;
     }
   }
 
