@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Product } from '../../defs/product-defs';
 import { ProductDetailsModal } from '../product-details/product-details.modal';
+import { FiltersModalComponent } from './filters-modal/filters-modal.component';
 
 @Component({
   selector: 'app-items-grid',
@@ -16,4 +17,14 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
   }
 
   ngOnInit() {}
+
+  protected openFiltersModal(): void {
+    this.modalCtrl
+      .create({
+        component: FiltersModalComponent,
+      })
+      .then((modalEl) => {
+        modalEl.present();
+      });
+  }
 }
