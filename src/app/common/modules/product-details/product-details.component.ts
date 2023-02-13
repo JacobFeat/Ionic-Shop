@@ -71,10 +71,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   protected addProductToCart(): void {
-    const productWithChoosenSize: ProductWithChoosenSize = {
+    const productWithChoosenSize = {
       ...this.product,
       choosenSize: this.size,
-    };
+    } as ProductWithChoosenSize;
     this.cartService.addProductToCart(productWithChoosenSize);
   }
 

@@ -13,6 +13,6 @@ export type ProductSize = 'S' | 'M' | 'L' | 'XL' | 'XXL';
 
 export type ProductKeys = keyof Product;
 
-export interface ProductWithChoosenSize {
+export interface ProductWithChoosenSize extends Product {
   choosenSize: ProductSize;
 }

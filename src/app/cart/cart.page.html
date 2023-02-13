@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid class="section-container">
+  <ion-grid class="section-container" *ngIf="products.length; else EmptyCart">
     <ion-row class="product-container" *ngFor="let product of products">
       <ion-col class="img-container">
         <img
@@ -18,7 +18,7 @@
         <ion-row>
           <ion-col>
             <p class="product-title">{{ product.name }}</p>
-            <p>Rozmiar S</p>
+            <p>Rozmiar {{ product.choosenSize }}</p>
           </ion-col>
           <ion-col size="auto">
             <ion-button class="btn btn-trash">
@@ -65,4 +65,18 @@
       <ion-button class="btn">FINALIZUJ</ion-button>
     </ion-row>
   </ion-grid>
+  <ng-template #EmptyCart>
+    <ion-grid class="empty-cart-container">
+      <ion-row>
+        <ion-col>
+          <ion-icon
+            class="empty-cart-icon"
+            icon="/assets/icon/bag-no-color.svg"
+          >
+          </ion-icon>
+          Brak produktów w koszyku
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
 </ion-content>
