@@ -81,7 +81,7 @@ ion-radio.ios {
   margin-top: 20px;
 }
 
-ion-footer.footer-only-buttons ion-toolbar {
+ion-footer ion-toolbar {
   display: flex;
   height: 60px;
   padding: 6px 19px;
@@ -89,19 +89,25 @@ ion-footer.footer-only-buttons ion-toolbar {
   --padding-bottom: 0;
   --min-height: 0;
 
+  ion-buttons {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .btn {
+    height: 40px;
+    font-size: 12px;
+    flex: 1 1 50%;
+  }
+
+  .btn-reset {
+    border: 1px solid var(--ion-color-medium);
+    --padding-start: 12px;
+    --padding-end: 10px;
+  }
+
   .btn-save {
     background-color: black;
     --color: var(--ion-color-primary-contrast);
-    height: 40px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    flex-basis: 100%;
-    text-transform: uppercase;
-
-    ion-icon {
-      max-height: 22px;
-      margin-right: 4px;
-    }
   }
 }

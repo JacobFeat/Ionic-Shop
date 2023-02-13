@@ -16,10 +16,7 @@ import { SortByProperties } from './items-grid.defs';
 export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
   @Input() products!: Product[];
 
-  private filtersValues: FiltersValues = {
-    priceRange: { lower: 20, upper: 400 },
-    sortOption: '',
-  };
+  private filtersValues!: FiltersValues;
   private initialProducts!: Product[];
 
   constructor(
@@ -31,12 +28,13 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
 
   ngOnInit() {
     this.makeCopyOfInitialProducts();
+    this.filtersValues = this.getInitialFiltersValues();
   }
 
   protected async openFiltersModal() {
     const modal = await this.modalCtrl.create({
       component: FiltersModalComponent,
-      componentProps: { filtersValues: this.filtersValues},
+      componentProps: { filtersValues: this.filtersValues },
     });
     modal.present();
 
@@ -44,11 +42,19 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
     this.filtersValues = modalData.data;
     const { role } = modalData;
 
-    if (role === 'save') {
-      this.filterProductByPriceRange(this.filtersValues.priceRange);
-      if (this.filtersValues.sortOption)
-        this.sortProducts(this.filtersValues.sortOption);
-    }
+    role === 'save' && this.filterProducts();
+    role === 'reset' && this.resetFilters();
+  }
+
+  private filterProducts(): void {
+    this.filterProductByPriceRange(this.filtersValues.priceRange);
+    if (this.filtersValues.sortOption)
+      this.sortProducts(this.filtersValues.sortOption);
+  }
+
+  private resetFilters(): void {
+    this.resetProductsToInitialState();
+    this.filtersValues = this.getInitialFiltersValues();
   }
 
   private sortProducts(sortValue: SortOption): void {
@@ -60,7 +66,6 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
       (product) =>
         product.price > priceRange.lower && product.price < priceRange.upper
     );
-    console.log(this.products);
   }
 
   private makeCopyOfInitialProducts(): void {
@@ -69,5 +74,12 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
 
   private resetProductsToInitialState(): void {
     this.products = this.initialProducts;
+  }
+
+  private getInitialFiltersValues(): FiltersValues {
+    return {
+      priceRange: { lower: 20, upper: 400 },
+      sortOption: '',
+    };
   }
 }

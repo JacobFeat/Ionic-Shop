@@ -34,6 +34,10 @@ export class FiltersModalComponent implements OnInit {
     this.modalCtrl.dismiss(this.filtersForm.value, 'save');
   }
 
+  protected onReset() {
+    this.modalCtrl.dismiss(null, 'reset');
+  }
+
   protected onCancel() {
     this.modalCtrl.dismiss(null, 'cancel');
   }
