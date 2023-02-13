@@ -6,9 +6,63 @@
 
 <ion-content>
   <ion-grid class="section-container">
-    <ion-row>
-      <ion-col>img</ion-col>
-      <ion-col>tresc</ion-col>
+    <ion-row class="product-container" *ngFor="let product of products">
+      <ion-col class="img-container">
+        <img
+          class="img"
+          [src]="'/assets/mockImages/' + product.imgUrl"
+          alt=""
+        />
+      </ion-col>
+      <ion-col class="product-content-cointainer">
+        <ion-row>
+          <ion-col>
+            <p class="product-title">{{ product.name }}</p>
+            <p>Rozmiar S</p>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button class="btn btn-trash">
+              <ion-icon
+                slot="icon-only"
+                icon="assets/icon/trash.svg"
+              ></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>{{ product.price | currency }} x 1</p>
+          </ion-col>
+          <ion-col class="product-summary-price">
+            <p>{{ product.price | currency }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="price-delivery-container">
+      <ion-row class="summary-texts-container">
+        <ion-col class="summary-texts-line">
+          <p>Wartość zamówienia</p>
+          <p>632,87 PLN</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="summary-texts-container">
+        <ion-col class="summary-texts-line">
+          <p>Dostawa</p>
+          <p>BEZPŁATNIE</p>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+    <ion-row class="summary-price-container">
+      <ion-row class="summary-price-row">
+        <ion-col class="summary-texts-line">
+          <p>SUMA</p>
+          <p>632,87 PLN</p>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+    <ion-row class="summary-btn-container">
+      <ion-button class="btn">FINALIZUJ</ion-button>
     </ion-row>
   </ion-grid>
 </ion-content>
