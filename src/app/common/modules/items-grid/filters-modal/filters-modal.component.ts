@@ -39,6 +39,6 @@ export class FiltersModalComponent implements OnInit {
   }
 
   protected onCancel() {
-    this.modalCtrl.dismiss(null, 'cancel');
+    this.modalCtrl.dismiss(this.filtersForm.value, 'cancel');
   }
 }
