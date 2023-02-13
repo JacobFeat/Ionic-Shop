@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { Product } from '../defs/product-defs';
+import { Product, ProductWithChoosenSize } from '../defs/product-defs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  private _productsInCart!: BehaviorSubject<Product[]>;
-  productsInCart$!: Observable<Product[]>;
+  private _productsInCart!: BehaviorSubject<ProductWithChoosenSize[]>;
+  productsInCart$!: Observable<ProductWithChoosenSize[]>;
 
   constructor() {
-    this._productsInCart = new BehaviorSubject<Product[]>([]);
+    this._productsInCart = new BehaviorSubject<ProductWithChoosenSize[]>([]);
     this.productsInCart$ = this._productsInCart.asObservable();
   }
 
-  addProductToCart(product: Product): void {
+  addProductToCart(product: ProductWithChoosenSize): void {
     const currentCartProducts = this._productsInCart.getValue();
     this._productsInCart.next([...currentCartProducts, product]);
   }

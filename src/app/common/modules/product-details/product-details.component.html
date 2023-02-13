@@ -57,7 +57,7 @@
         <ng-template #sizeWrapper>Rozmiar {{ size }}</ng-template>
         <ion-icon slot="end" icon="assets/icon/expand-down-arrow.svg"></ion-icon
       ></ion-button>
-      <ion-button (click)="addProductToCart()" class="btn btn-add">
+      <ion-button [disabled]="!size" (click)="addProductToCart()" class="btn btn-add">
         <ion-icon slot="start" icon="assets/icon/bag-white.svg"></ion-icon
         >Dodaj</ion-button
       >

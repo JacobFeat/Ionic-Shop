@@ -4,7 +4,11 @@ import {
   IonModal,
   ModalController,
 } from '@ionic/angular';
-import { Product } from '../../defs/product-defs';
+import {
+  Product,
+  ProductSize,
+  ProductWithChoosenSize,
+} from '../../defs/product-defs';
 import { ProductAvailabilityComponent } from './product-availability/product-availability.component';
 import { ActionSheetButtonsModel } from './product-details.defs';
 import { Geolocation } from '@capacitor/geolocation';
@@ -22,7 +26,7 @@ export class ProductDetailsComponent implements OnInit {
 
   private userLocation!: Coordinates;
   protected productsInCartAmount = 0;
-  protected size!: number;
+  protected size!: ProductSize;
 
   constructor(
     private modalCtrl: ModalController,
@@ -67,7 +71,11 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   protected addProductToCart(): void {
-    this.cartService.addProductToCart(this.product as Product);
+    const productWithChoosenSize: ProductWithChoosenSize = {
+      ...this.product,
+      choosenSize: this.size,
+    };
+    this.cartService.addProductToCart(productWithChoosenSize);
   }
 
   protected onCancel() {
