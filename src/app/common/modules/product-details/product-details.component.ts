@@ -9,6 +9,7 @@ import { ProductAvailabilityComponent } from './product-availability/product-ava
 import { ActionSheetButtonsModel } from './product-details.defs';
 import { Geolocation } from '@capacitor/geolocation';
 import { Coordinates } from '../../defs/location.defs';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -20,15 +21,20 @@ export class ProductDetailsComponent implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
 
   private userLocation!: Coordinates;
+  protected productsInCartAmount = 0;
   protected size!: number;
 
   constructor(
     private modalCtrl: ModalController,
-    private actionSheetCtrl: ActionSheetController
+    private actionSheetCtrl: ActionSheetController,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
     this.getCurrentUserLocation();
+    this.cartService.productsInCart$.subscribe((products) => {
+      this.productsInCartAmount = products.length;
+    });
   }
 
   async presentActionSheet() {
@@ -58,6 +64,14 @@ export class ProductDetailsComponent implements OnInit {
     modal.present();
 
     const { data, role } = await modal.onWillDismiss();
+  }
+
+  protected addProductToCart(): void {
+    this.cartService.addProductToCart(this.product as Product);
+  }
+
+  protected onCancel() {
+    this.modalCtrl.dismiss(null, 'cancel');
   }
 
   private getCurrentUserLocation = async () => {
@@ -99,9 +113,5 @@ export class ProductDetailsComponent implements OnInit {
       })
     );
     return availableSizesButtons;
-  }
-
-  onCancel() {
-    this.modalCtrl.dismiss(null, 'cancel');
   }
 }

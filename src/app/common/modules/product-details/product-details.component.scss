@@ -25,6 +25,22 @@ ion-header {
   }
 }
 
+.btn-bag {
+  &::part(native) {
+    --overflow: visible;
+  }
+}
+
+ion-badge {
+  position: absolute;
+  top: -4px;
+  left: -14px;
+  padding-inline-start: 7px;
+  padding-inline-end: 7px;
+  --padding-top: 4px;
+  --padding-end: 4px;
+}
+
 ion-grid,
 .img-wrapper {
   padding: 0;

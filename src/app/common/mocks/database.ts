@@ -214,13 +214,7 @@ export const categoriesForYou: CategoryForYou[] = [
     typeId: 1,
     imgUrl: '../../../assets/mockImages/19.jpg',
   },
-  {
-    categoryName: getNameByIdInCollection(categories, 1),
-    typeName: getNameByIdInCollection(types, 2),
-    categoryId: 1,
-    typeId: 2,
-    imgUrl: '../../../assets/mockImages/20.jpg',
-  },
+
   {
     categoryName: getNameByIdInCollection(categories, 1),
     typeName: getNameByIdInCollection(types, 3),
@@ -241,6 +235,13 @@ export const categoriesForYou: CategoryForYou[] = [
     categoryId: 1,
     typeId: 6,
     imgUrl: '../../../assets/mockImages/23.jpg',
+  },
+  {
+    categoryName: getNameByIdInCollection(categories, 1),
+    typeName: getNameByIdInCollection(types, 2),
+    categoryId: 1,
+    typeId: 2,
+    imgUrl: '../../../assets/mockImages/20.jpg',
   },
 ];
 

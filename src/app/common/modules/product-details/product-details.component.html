@@ -6,7 +6,10 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button class="btn-bag">
+        <ion-badge *ngIf="productsInCartAmount" slot="start">
+          {{ productsInCartAmount }}
+        </ion-badge>
         <ion-icon slot="icon-only" icon="assets/icon/bag.svg"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -29,7 +32,10 @@
       </ion-row>
       <ion-row>
         <ion-col class="check-availability-wrapper">
-          <ion-button (click)="openProductAvailabilityModal()" class="check-availability-btn">
+          <ion-button
+            (click)="openProductAvailabilityModal()"
+            class="check-availability-btn"
+          >
             <ion-icon slot="start" icon="assets/icon/shop.svg"></ion-icon>
             Sprawdź dostępność w sklepie
           </ion-button>
@@ -47,11 +53,11 @@
   <ion-toolbar>
     <ion-buttons>
       <ion-button class="btn btn-choose" (click)="presentActionSheet()">
-        <p *ngIf="!size; else sizeWrapper"> Wybierz rozmiar </p>
+        <p *ngIf="!size; else sizeWrapper">Wybierz rozmiar</p>
         <ng-template #sizeWrapper>Rozmiar {{ size }}</ng-template>
         <ion-icon slot="end" icon="assets/icon/expand-down-arrow.svg"></ion-icon
       ></ion-button>
-      <ion-button class="btn btn-add">
+      <ion-button (click)="addProductToCart()" class="btn btn-add">
         <ion-icon slot="start" icon="assets/icon/bag-white.svg"></ion-icon
         >Dodaj</ion-button
       >
