@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, ProductWithChoosenSize } from '../common/defs/product-defs';
+import { ProductWithChoosenSize } from '../common/defs/product-defs';
 import { CartService } from '../common/services/cart.service';
-import { ProductsService } from '../common/services/products.service';
 
 @Component({
   selector: 'app-cart',
