@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { RangeValues } from '../../defs/ion-components.defs';
 import { Product } from '../../defs/product-defs';
 import { ProductDetailsModal } from '../product-details/product-details.modal';
 import { FiltersValues, SortOption } from './filters-modal/filter-modal.defs';
@@ -39,13 +40,21 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
     const { role } = modalData;
 
     if (role === 'save') {
-      this.sortProducts(data.sortOption);
+      this.filterProductByPriceRange(data.priceRange);
+      if (data.sortOption) this.sortProducts(data.sortOption);
     }
   }
 
   private sortProducts(sortValue: SortOption): void {
-    if (!sortValue) this.resetProductsToInitialState();
     this.products = this.filtersService.sortProducts(this.products, sortValue);
+  }
+
+  private filterProductByPriceRange(priceRange: RangeValues): void {
+    this.products = [...this.initialProducts].filter(
+      (product) =>
+        product.price > priceRange.lower && product.price < priceRange.upper
+    );
+    console.log(this.products);
   }
 
   private makeCopyOfInitialProducts(): void {
