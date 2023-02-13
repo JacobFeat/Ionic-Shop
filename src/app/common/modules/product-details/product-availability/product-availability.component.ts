@@ -14,6 +14,9 @@ export class ProductAvailabilityComponent implements OnInit {
   @Input() product!: Product;
   @Input() userLocation!: Coordinates;
 
+  protected emptyGridIconName = 'shop2';
+  protected emptyGridMessage = 'Brak sklepu z tym produktem';
+
   protected shops!: ShopWithDistanceFromUser[];
   protected availableSizesInShops!: ProductSize[];
 

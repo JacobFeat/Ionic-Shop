@@ -6,7 +6,10 @@
 
 <ion-content>
   <ion-grid class="section-container" *ngIf="products.length; else EmptyCart">
-    <ion-row class="product-container" *ngFor="let product of products; let id = index">
+    <ion-row
+      class="product-container"
+      *ngFor="let product of products; let id = index"
+    >
       <ion-col class="img-container">
         <img
           class="img"
@@ -66,17 +69,9 @@
     </ion-row>
   </ion-grid>
   <ng-template #EmptyCart>
-    <ion-grid class="empty-cart-container">
-      <ion-row>
-        <ion-col>
-          <ion-icon
-            class="empty-cart-icon"
-            icon="/assets/icon/bag-no-color.svg"
-          >
-          </ion-icon>
-          Brak produktów w koszyku
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <app-empty-grid
+      [iconFileName]="emptyGridIconName"
+      [message]="emptyGridMessage"
+    ></app-empty-grid>
   </ng-template>
 </ion-content>

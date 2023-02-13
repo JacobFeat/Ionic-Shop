@@ -1,0 +1,9 @@
+<ion-grid class="empty-cart-container">
+  <ion-row>
+    <ion-col [ngClass]="{'top': infoPosition === 'top', 'center': infoPosition === 'center'}">
+      <ion-icon class="empty-cart-icon" [icon]="'/assets/icon/' + iconFileName + '.svg'">
+      </ion-icon>
+      <ion-text>{{ message }}</ion-text>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,26 @@
+.empty-cart-container {
+  height: 100%;
+
+  ion-row {
+    height: 100%;
+  }
+
+  ion-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &.center {
+        justify-content: center;
+    }
+
+    &.top {
+        justify-content: start;
+    }
+  }
+}
+
+.empty-cart-icon {
+  font-size: 110px;
+  stroke: var(--ion-color-medium);
+}

@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-grid>
+  <ion-grid *ngIf="shops.length; else NoShops">
     <ion-row *ngFor="let shop of shops | slice : 0 : 3" class="shop-container">
       <ion-col class="shop-info-container">
         <ion-row>
@@ -37,4 +37,11 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ng-template #NoShops>
+    <app-empty-grid
+      [iconFileName]="emptyGridIconName"
+      [message]="emptyGridMessage"
+      infoPosition="top"
+    ></app-empty-grid>
+  </ng-template>
 </ion-content>
