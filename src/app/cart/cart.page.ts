@@ -9,18 +9,17 @@ import { ProductsService } from '../common/services/products.service';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
-  // protected products!: Product[];
   protected products!: ProductWithChoosenSize[];
 
-  constructor(
-    private productsService: ProductsService,
-    private cartService: CartService
-  ) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    // this.products = this.productsService.products.slice(0, 2);
     this.cartService.productsInCart$.subscribe((products) => {
       this.products = products;
     });
+  }
+
+  protected deleteProduct(id: number): void {
+    this.products.splice(id, 1);
   }
 }

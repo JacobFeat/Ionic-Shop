@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-grid class="section-container" *ngIf="products.length; else EmptyCart">
-    <ion-row class="product-container" *ngFor="let product of products">
+    <ion-row class="product-container" *ngFor="let product of products; let id = index">
       <ion-col class="img-container">
         <img
           class="img"
@@ -21,7 +21,7 @@
             <p>Rozmiar {{ product.choosenSize }}</p>
           </ion-col>
           <ion-col size="auto">
-            <ion-button class="btn btn-trash">
+            <ion-button (click)="deleteProduct(id)" class="btn btn-trash">
               <ion-icon
                 slot="icon-only"
                 icon="assets/icon/trash.svg"
