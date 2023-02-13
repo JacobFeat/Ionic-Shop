@@ -16,6 +16,10 @@ import { SortByProperties } from './items-grid.defs';
 export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
   @Input() products!: Product[];
 
+  private filtersValues: FiltersValues = {
+    priceRange: { lower: 20, upper: 400 },
+    sortOption: '',
+  };
   private initialProducts!: Product[];
 
   constructor(
@@ -32,16 +36,18 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
   protected async openFiltersModal() {
     const modal = await this.modalCtrl.create({
       component: FiltersModalComponent,
+      componentProps: { filtersValues: this.filtersValues},
     });
     modal.present();
 
     const modalData = await modal.onWillDismiss();
-    const data: FiltersValues = modalData.data;
+    this.filtersValues = modalData.data;
     const { role } = modalData;
 
     if (role === 'save') {
-      this.filterProductByPriceRange(data.priceRange);
-      if (data.sortOption) this.sortProducts(data.sortOption);
+      this.filterProductByPriceRange(this.filtersValues.priceRange);
+      if (this.filtersValues.sortOption)
+        this.sortProducts(this.filtersValues.sortOption);
     }
   }
 
