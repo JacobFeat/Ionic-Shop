@@ -32,8 +32,6 @@ export class ItemsGridComponent extends ProductDetailsModal implements OnInit {
   }
 
   protected async openFiltersModal() {
-    console.log(this.filtersValues);
-
     const modal = await this.modalCtrl.create({
       component: FiltersModalComponent,
       componentProps: { filtersValues: this.filtersValues },
