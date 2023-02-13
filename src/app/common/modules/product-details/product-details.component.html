@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button class="btn-bag">
+      <ion-button (click)="goToCart()" class="btn-bag">
         <ion-badge *ngIf="productsInCartAmount" slot="start">
           {{ productsInCartAmount }}
         </ion-badge>
@@ -57,7 +57,11 @@
         <ng-template #sizeWrapper>Rozmiar {{ size }}</ng-template>
         <ion-icon slot="end" icon="assets/icon/expand-down-arrow.svg"></ion-icon
       ></ion-button>
-      <ion-button [disabled]="!size" (click)="addProductToCart()" class="btn btn-add">
+      <ion-button
+        [disabled]="!size"
+        (click)="addProductToCart()"
+        class="btn btn-add"
+      >
         <ion-icon slot="start" icon="assets/icon/bag-white.svg"></ion-icon
         >Dodaj</ion-button
       >

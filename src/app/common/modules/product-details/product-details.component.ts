@@ -14,6 +14,7 @@ import { ActionSheetButtonsModel } from './product-details.defs';
 import { Geolocation } from '@capacitor/geolocation';
 import { Coordinates } from '../../defs/location.defs';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -31,7 +32,8 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private actionSheetCtrl: ActionSheetController,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -78,7 +80,12 @@ export class ProductDetailsComponent implements OnInit {
     this.cartService.addProductToCart(productWithChoosenSize);
   }
 
-  protected onCancel() {
+  protected goToCart(): void {
+    this.modalCtrl.dismiss(null, 'goToCart');
+    this.router.navigateByUrl('/cart');
+  }
+
+  protected onCancel(): void {
     this.modalCtrl.dismiss(null, 'cancel');
   }
 
