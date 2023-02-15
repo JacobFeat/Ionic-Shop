@@ -14,6 +14,8 @@ export class HorizontalListComponent implements OnInit {
   @Input() listModel!: HorizontalListItem;
   @Input() listItems!: any[];
   @Input() modalComponent!: any;
+  @Input() titleInput!: string;
+  
   protected routerLink!: string;
 
   config: SwiperOptions = {

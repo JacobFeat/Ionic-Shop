@@ -22,14 +22,17 @@
     "add": "Add",
     "save": "Save",
     "reset": "Reset",
+    "cancel": "Cancel",
     "distance": "Distance",
     "chooseLang": "Choose language",
     "settings": "Settings",
     "cart": "Cart",
-    "favourite": "favourite",
+    "favourite": "Favourite",
     "myProfile": "My profile",
     "attention": "Attention",
-    "functionWillBeAvailableSoon": "Function will be available soon"
+    "functionWillBeAvailableSoon": "Function will be available soon",
+    "weAreWorkingOnThisSection": "We are working on this section",
+    "noProductsInTheCart": "No products in the cart"
   },
   "order": {
     "delivery": "Delivery",
@@ -37,5 +40,9 @@
     "free": "FREE",
     "totalOrder": "TOTAL ORDER",
     "finalize": "FINALIZE"
+  },
+  "horizontalList": {
+    "specialForYou": "Special for you",
+    "categoriesForYou": "Categories for you"
   }
 }

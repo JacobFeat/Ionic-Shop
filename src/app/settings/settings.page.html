@@ -13,9 +13,10 @@
           interface="action-sheet"
           [(ngModel)]="currentLanguage"
           (ngModelChange)="onChangeLanguage($event)"
+          [cancelText]="cancelText"
         >
           <ion-select-option value="pl">Polski</ion-select-option>
-          <ion-select-option value="en">Angielski</ion-select-option>
+          <ion-select-option value="en">English</ion-select-option>
         </ion-select>
       </ion-col>
     </ion-row>

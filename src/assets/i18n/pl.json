@@ -22,6 +22,7 @@
     "add": "Dodaj",
     "save": "Zapisz",
     "reset": "Resetuj",
+    "cancel": "Anuluj",
     "distance": "Odległość",
     "chooseLang": "Wybierz język",
     "settings": "Ustawienia",
@@ -29,7 +30,9 @@
     "favourite": "Ulubione",
     "myProfile": "Mój profil",
     "attention": "Uwaga",
-    "functionWillBeAvailableSoon": "Funkcja będzie wkrótce dostępna"
+    "functionWillBeAvailableSoon": "Funkcja będzie wkrótce dostępna",
+    "weAreWorkingOnThisSection": "Pracujemy nad tym obszarem",
+    "noProductsInTheCart": "Brak produktów w koszyku"
   },
   "order": {
     "delivery": "Dostawa",
@@ -37,5 +40,9 @@
     "free": "BEZPŁATNIE",
     "totalOrder": "SUMA",
     "finalize": "FINALIZUJ"
+  },
+  "horizontalList": {
+    "specialForYou": "Specjalnie dla Ciebie",
+    "categoriesForYou": "Kategorie dla Ciebie"
   }
 }

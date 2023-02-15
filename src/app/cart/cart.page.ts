@@ -11,7 +11,6 @@ import { CartService } from '../common/services/cart.service';
 })
 export class CartPage implements OnInit {
   protected products!: ProductWithChoosenSize[];
-  protected emptyGridMessage = 'Brak produktów w koszyku';
   protected emptyGridIconName = 'bag-no-color';
 
   constructor(

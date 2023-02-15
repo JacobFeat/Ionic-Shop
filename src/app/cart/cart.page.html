@@ -73,7 +73,7 @@
   <ng-template #EmptyCart>
     <app-empty-grid
       [iconFileName]="emptyGridIconName"
-      [message]="emptyGridMessage"
+      message="{{ 'common.noProductsInTheCart' | translate }}"
     ></app-empty-grid>
   </ng-template>
 </ion-content>

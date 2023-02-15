@@ -1,6 +1,12 @@
-<ion-text *ngIf="listModel.title" class="title" color="primary">{{
-  listModel.title
-}}</ion-text>
+<ion-text
+  *ngIf="listModel.title; else TitleInput"
+  class="title"
+  color="primary"
+  >{{ listModel.title }}</ion-text
+>
+<ng-template #TitleInput>
+  <ion-text class="title" color="primary">{{ titleInput }}</ion-text>
+</ng-template>
 <div class="swiper-container">
   <swiper [config]="config">
     <ng-template swiperSlide *ngFor="let item of listItems">

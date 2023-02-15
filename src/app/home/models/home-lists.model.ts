@@ -3,7 +3,6 @@ import { HorizontalListItem } from 'src/app/common/modules/horizontal-list/horiz
 export class HomeListsModel {
   static getProductsHorizontalModel(): HorizontalListItem {
     return {
-      title: 'Specjalnie dla Ciebie',
       firstLine: 'name',
       secondLine: 'price',
       imgUrl: 'imgUrl',
@@ -14,7 +13,6 @@ export class HomeListsModel {
 
   static getCategoriesForYouHorizontalModel(): HorizontalListItem {
     return {
-      title: 'Kategorie dla Ciebie',
       firstLine: 'categoryName',
       secondLine: 'typeName',
       imgUrl: 'imgUrl',
