@@ -11,7 +11,9 @@
     "nameAsc": "Nazwa rosnąco",
     "nameDesc": "Nazwa malejąco",
     "filters": "Filtry",
-    "price": "Cena"
+    "price": "Cena",
+    "noProducts": "Brak produktów",
+    "lookForProducts": "Szukaj produktów"
   },
   "shop": {
     "workHours": "Godziny pracy",
@@ -23,6 +25,7 @@
     "save": "Zapisz",
     "reset": "Resetuj",
     "cancel": "Anuluj",
+    "clear": "Wyczyść",
     "distance": "Odległość",
     "chooseLang": "Wybierz język",
     "settings": "Ustawienia",
@@ -43,6 +46,7 @@
   },
   "horizontalList": {
     "specialForYou": "Specjalnie dla Ciebie",
-    "categoriesForYou": "Kategorie dla Ciebie"
+    "categoriesForYou": "Kategorie dla Ciebie",
+    "theMostPopular": "Najchętniej wybierane"
   }
 }

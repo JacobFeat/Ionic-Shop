@@ -8,6 +8,9 @@ import { CategoriesPageRoutingModule } from './categories-routing.module';
 
 import { CategoriesPage } from './categories.page';
 import { CustomCommonModule } from 'src/app/common/common.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -16,6 +19,13 @@ import { CustomCommonModule } from 'src/app/common/common.module';
     IonicModule,
     CategoriesPageRoutingModule,
     CustomCommonModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
   declarations: [CategoriesPage],
 })

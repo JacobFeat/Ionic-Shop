@@ -29,6 +29,7 @@
       [listItems]="mostPopularProducts"
       [listModel]="mostPopularProductsHorizontalModel"
       [modalComponent]="productDetailComponent"
+      titleInput="{{ 'horizontalList.theMostPopular' | translate }}"
     ></app-horizontal-list>
   </section>
   <section class="section-container vertical-list" *ngIf="productsTypes.length">

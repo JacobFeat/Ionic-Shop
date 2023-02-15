@@ -15,6 +15,7 @@ import { Geolocation } from '@capacitor/geolocation';
 import { Coordinates } from '../../defs/location.defs';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-details',
@@ -34,6 +35,7 @@ export class ProductDetailsComponent implements OnInit {
     private actionSheetCtrl: ActionSheetController,
     private cartService: CartService,
     private router: Router,
+    private translate: TranslateService 
   ) {}
 
   ngOnInit() {
@@ -45,8 +47,9 @@ export class ProductDetailsComponent implements OnInit {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Wybierz rozmiar',
+      header: this.translate.instant('product.chooseSize'),
       buttons: this.getAvailableSizesModel(this.product),
+
     });
 
     await actionSheet.present();
@@ -106,7 +109,7 @@ export class ProductDetailsComponent implements OnInit {
 
   private getCancelButton(): ActionSheetButtonsModel {
     return {
-      text: 'Anuluj',
+      text: this.translate.instant('common.cancel'),
       role: 'cancel',
       data: {
         action: 'cancel',

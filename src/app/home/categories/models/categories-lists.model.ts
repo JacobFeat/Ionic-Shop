@@ -3,7 +3,6 @@ import { HorizontalListItem } from 'src/app/common/modules/horizontal-list/horiz
 export class CategoriesListsModel {
   static getMostPopularProductsHorizontalModel(): HorizontalListItem {
     return {
-      title: 'Najchętniej wybierane',
       firstLine: 'name',
       secondLine: 'price',
       imgUrl: 'imgUrl',

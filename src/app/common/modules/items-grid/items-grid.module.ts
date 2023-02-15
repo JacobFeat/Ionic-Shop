@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/app.module';
 import { HttpClient } from '@angular/common/http';
+import { EmptyGridModule } from '../empty-grid/empty-grid.module';
 
 @NgModule({
   declarations: [ItemsGridComponent, FiltersModalComponent],
@@ -14,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
     CommonModule,
     IonicModule,
     ReactiveFormsModule,
+    EmptyGridModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
