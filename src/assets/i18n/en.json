@@ -22,6 +22,20 @@
     "add": "Add",
     "save": "Save",
     "reset": "Reset",
-    "distance": "Distance"
+    "distance": "Distance",
+    "chooseLang": "Choose language",
+    "settings": "Settings",
+    "cart": "Cart",
+    "favourite": "favourite",
+    "myProfile": "My profile",
+    "attention": "Attention",
+    "functionWillBeAvailableSoon": "Function will be available soon"
+  },
+  "order": {
+    "delivery": "Delivery",
+    "orderValue": "Order value",
+    "free": "FREE",
+    "totalOrder": "TOTAL ORDER",
+    "finalize": "FINALIZE"
   }
 }

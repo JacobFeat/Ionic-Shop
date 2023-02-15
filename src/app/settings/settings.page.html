@@ -1,12 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Ustawienia</ion-title>
+    <ion-title>{{ "common.settings" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-empty-grid
-    iconFileName="fire"
-    message="Pracujemy nad tym obszarem"
-  ></app-empty-grid>
+  <ion-grid class="section-container">
+    <ion-row>
+      <ion-col>
+        <ion-label>{{ "common.chooseLang" | translate }}</ion-label>
+        <ion-select
+          interface="action-sheet"
+          [(ngModel)]="currentLanguage"
+          (ngModelChange)="onChangeLanguage($event)"
+        >
+          <ion-select-option value="pl">Polski</ion-select-option>
+          <ion-select-option value="en">Angielski</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

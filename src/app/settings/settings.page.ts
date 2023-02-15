@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Language } from '../common/defs/language.defs';
 
 @Component({
   selector: 'app-settings',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
+  protected currentLanguage: Language = 'pl';
 
-  constructor() { }
+  constructor(private translate: TranslateService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onChangeLanguage(language: Language) {
+    this.currentLanguage = language;
+    this.translate.use(this.currentLanguage);
   }
-
 }

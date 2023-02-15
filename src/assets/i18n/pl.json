@@ -22,6 +22,20 @@
     "add": "Dodaj",
     "save": "Zapisz",
     "reset": "Resetuj",
-    "distance": "Odległość"
+    "distance": "Odległość",
+    "chooseLang": "Wybierz język",
+    "settings": "Ustawienia",
+    "cart": "Koszyk",
+    "favourite": "Ulubione",
+    "myProfile": "Mój profil",
+    "attention": "Uwaga",
+    "functionWillBeAvailableSoon": "Funkcja będzie wkrótce dostępna"
+  },
+  "order": {
+    "delivery": "Dostawa",
+    "orderValue": "Wartość zamówienia",
+    "free": "BEZPŁATNIE",
+    "totalOrder": "SUMA",
+    "finalize": "FINALIZUJ"
   }
 }

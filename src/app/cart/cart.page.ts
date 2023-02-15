@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { ProductWithChoosenSize } from '../common/defs/product-defs';
 import { CartService } from '../common/services/cart.service';
 
@@ -15,7 +16,8 @@ export class CartPage implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {
@@ -30,8 +32,10 @@ export class CartPage implements OnInit {
 
   protected async finalizePurchase() {
     const alert = await this.alertController.create({
-      header: 'Uwaga!',
-      message: 'Funkcja będzie wkrótce dostępna.',
+      header: `${this.translate.instant('common.attention')}!`,
+      message: `${this.translate.instant(
+        'common.functionWillBeAvailableSoon'
+      )}.`,
       buttons: ['OK'],
     });
 

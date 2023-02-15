@@ -15,6 +15,6 @@ export class AppComponent {
   }
 
   initializeLanguage() {
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('pl');
   }
 }

@@ -8,6 +8,9 @@ import { MyProfilePageRoutingModule } from './my-profile-routing.module';
 
 import { MyProfilePage } from './my-profile.page';
 import { CustomCommonModule } from '../common/common.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from '../app.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -16,6 +19,13 @@ import { CustomCommonModule } from '../common/common.module';
     IonicModule,
     MyProfilePageRoutingModule,
     CustomCommonModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
   declarations: [MyProfilePage],
 })

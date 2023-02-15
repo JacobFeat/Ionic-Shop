@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Koszyk</ion-title>
+    <ion-title>{{ "common.cart" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +21,7 @@
         <ion-row>
           <ion-col>
             <p class="product-title">{{ product.name }}</p>
-            <p>Rozmiar {{ product.choosenSize }}</p>
+            <p>{{ "product.size" | translate }} {{ product.choosenSize }}</p>
           </ion-col>
           <ion-col size="auto">
             <ion-button (click)="deleteProduct(id)" class="btn btn-trash">
@@ -45,27 +45,29 @@
     <ion-row class="price-delivery-container">
       <ion-row class="summary-texts-container">
         <ion-col class="summary-texts-line">
-          <p>Wartość zamówienia</p>
+          <p>{{ "order.orderValue" | translate }}</p>
           <p>632,87 PLN</p>
         </ion-col>
       </ion-row>
       <ion-row class="summary-texts-container">
         <ion-col class="summary-texts-line">
-          <p>Dostawa</p>
-          <p>BEZPŁATNIE</p>
+          <p>{{ "order.delivery" | translate }}</p>
+          <p>{{ "order.free" | translate }}</p>
         </ion-col>
       </ion-row>
     </ion-row>
     <ion-row class="summary-price-container">
       <ion-row class="summary-price-row">
         <ion-col class="summary-texts-line">
-          <p>SUMA</p>
+          <p>{{ "order.totalOrder" | translate }}</p>
           <p>632,87 PLN</p>
         </ion-col>
       </ion-row>
     </ion-row>
     <ion-row class="summary-btn-container">
-      <ion-button (click)="finalizePurchase()" class="btn">FINALIZUJ</ion-button>
+      <ion-button (click)="finalizePurchase()" class="btn"
+        >{{ "order.finalize" | translate }}</ion-button
+      >
     </ion-row>
   </ion-grid>
   <ng-template #EmptyCart>
