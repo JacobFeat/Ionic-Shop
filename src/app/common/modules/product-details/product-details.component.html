@@ -7,7 +7,7 @@
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="goToCart()" class="btn-bag">
-        <ion-badge *ngIf="productsInCartAmount" slot="start">
+        <ion-badge mode="ios" *ngIf="productsInCartAmount" slot="start">
           {{ productsInCartAmount }}
         </ion-badge>
         <ion-icon slot="icon-only" icon="assets/icon/bag.svg"></ion-icon>
@@ -35,6 +35,7 @@
           <ion-button
             (click)="openProductAvailabilityModal()"
             class="check-availability-btn"
+            mode="ios"
           >
             <ion-icon slot="start" icon="assets/icon/shop.svg"></ion-icon>
             {{ "product.checkAvailability" | translate }}
@@ -56,7 +57,9 @@
         <p *ngIf="!size; else sizeWrapper">
           {{ "product.chooseSize" | translate }}
         </p>
-        <ng-template #sizeWrapper>{{ "product.size" | translate }} {{ size }}</ng-template>
+        <ng-template #sizeWrapper
+          >{{ "product.size" | translate }} {{ size }}</ng-template
+        >
         <ion-icon slot="end" icon="assets/icon/expand-down-arrow.svg"></ion-icon
       ></ion-button>
       <ion-button
