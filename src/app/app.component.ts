@@ -11,10 +11,10 @@ export class AppComponent {
   AppPaths = AppPaths;
 
   constructor(private translate: TranslateService) {
-    this.initializeApp();
+    this.initializeLanguage();
   }
 
-  initializeApp() {
-    this.translate.setDefaultLang('pl');
+  initializeLanguage() {
+    this.translate.setDefaultLang('en');
   }
 }

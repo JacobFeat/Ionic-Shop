@@ -37,7 +37,7 @@
             class="check-availability-btn"
           >
             <ion-icon slot="start" icon="assets/icon/shop.svg"></ion-icon>
-            Sprawdź dostępność w sklepie
+            {{ "product.checkAvailability" | translate }}
           </ion-button>
         </ion-col>
       </ion-row>
@@ -53,11 +53,10 @@
   <ion-toolbar>
     <ion-buttons>
       <ion-button class="btn btn-choose" (click)="presentActionSheet()">
-        <!-- <p *ngIf="!size; else sizeWrapper">Wybierz rozmiar</p> -->
         <p *ngIf="!size; else sizeWrapper">
           {{ "product.chooseSize" | translate }}
         </p>
-        <ng-template #sizeWrapper>Rozmiar {{ size }}</ng-template>
+        <ng-template #sizeWrapper>{{ "product.size" | translate }} {{ size }}</ng-template>
         <ion-icon slot="end" icon="assets/icon/expand-down-arrow.svg"></ion-icon
       ></ion-button>
       <ion-button
@@ -66,7 +65,7 @@
         class="btn btn-add"
       >
         <ion-icon slot="start" icon="assets/icon/bag-white.svg"></ion-icon
-        >Dodaj</ion-button
+        >{{ "common.add" | translate }}</ion-button
       >
     </ion-buttons>
   </ion-toolbar>

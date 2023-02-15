@@ -33,7 +33,7 @@ export class ProductDetailsComponent implements OnInit {
     private modalCtrl: ModalController,
     private actionSheetCtrl: ActionSheetController,
     private cartService: CartService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit() {

@@ -1,5 +1,27 @@
 {
   "product": {
-    "chooseSize": "Choose size"
+    "chooseSize": "Choose size",
+    "size": "Size",
+    "checkAvailability": "Check availability in the shop",
+    "sortingAndFilterting": "Filtering and sorting",
+    "sizesAvailable": "Available sizes",
+    "sortBy": "Sort by",
+    "priceAsc": "Price ascending",
+    "priceDesc": "Price descending",
+    "nameAsc": "Name ascending",
+    "nameDesc": "Name descending",
+    "filters": "Filters",
+    "price": "Price"
+  },
+  "shop": {
+    "workHours": "Work hours",
+    "fromMondayToSaturday": "Mon. - Sat.",
+    "sunday": "Sun."
+  },
+  "common": {
+    "add": "Add",
+    "save": "Save",
+    "reset": "Reset",
+    "distance": "Distance"
   }
 }

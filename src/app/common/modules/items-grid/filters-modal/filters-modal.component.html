@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" icon="assets/icon/close.svg"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Filtrowanie i sortowanie</ion-title>
+    <ion-title>{{ "product.sortingAndFilterting" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
@@ -13,7 +13,9 @@
     <form [formGroup]="filtersForm">
       <ion-row class="filter-container">
         <ion-col>
-          <ion-text class="filter-title">Sortuj według:</ion-text>
+          <ion-text class="filter-title"
+            >{{ "product.sortBy" | translate }}:</ion-text
+          >
           <ion-list>
             <ion-radio-group
               formControlName="sortOption"
@@ -21,19 +23,19 @@
             >
               <ion-item class="filter-item">
                 <ion-radio slot="end" value="priceAsc"></ion-radio>
-                <ion-label>Cena rosnąco</ion-label>
+                <ion-label>{{ "product.priceAsc" | translate }}</ion-label>
               </ion-item>
               <ion-item class="filter-item">
                 <ion-radio slot="end" value="priceDesc"></ion-radio>
-                <ion-label>Cena malejąco</ion-label>
+                <ion-label>{{ "product.priceDesc" | translate }}</ion-label>
               </ion-item>
               <ion-item class="filter-item">
                 <ion-radio slot="end" value="nameAsc"></ion-radio>
-                <ion-label>Nazwa rosnąco</ion-label>
+                <ion-label>{{ "product.nameAsc" | translate }}</ion-label>
               </ion-item>
               <ion-item class="filter-item">
                 <ion-radio slot="end" value="nameDesc"></ion-radio>
-                <ion-label>Nazwa malejąco</ion-label>
+                <ion-label>{{ "product.nameDesc" | translate }}</ion-label>
               </ion-item>
             </ion-radio-group>
           </ion-list></ion-col
@@ -41,10 +43,14 @@
       </ion-row>
       <ion-row class="filter-container filter-inputs-container">
         <ion-col>
-          <ion-text class="filter-title">Filtry:</ion-text>
+          <ion-text class="filter-title"
+            >{{ "product.filters" | translate }}:</ion-text
+          >
           <ion-list>
             <ion-item class="filter-item">
-              <ion-text class="filter-subtitle">Cena</ion-text>
+              <ion-text class="filter-subtitle">{{
+                "product.price" | translate
+              }}</ion-text>
               <div class="filter-range-values">
                 <ion-text>{{ filtersValues.priceRange.lower }} PLN</ion-text>
                 <ion-text>{{ filtersValues.priceRange.upper }} PLN</ion-text>
@@ -69,8 +75,12 @@
 <ion-footer class="footer-only-buttons">
   <ion-toolbar>
     <ion-buttons>
-      <ion-button (click)="onSave()" class="btn btn-save">Zapisz</ion-button>
-      <ion-button (click)="onReset()" class="btn btn-reset">Resetuj</ion-button>
+      <ion-button (click)="onSave()" class="btn btn-save">{{
+        "common.save" | translate
+      }}</ion-button>
+      <ion-button (click)="onReset()" class="btn btn-reset">{{
+        "common.reset" | translate
+      }}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

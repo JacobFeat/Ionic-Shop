@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sprawdź dostępność w sklepie</ion-title>
+    <ion-title>{{ "product.checkAvailability" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
@@ -13,18 +13,20 @@
           <ion-text>{{ shop.postCode }} {{ shop.city }}</ion-text>
         </ion-row>
         <ion-row>
-          <ion-text class="info-title">Godziny pracy:</ion-text>
-          <ion-text>Pn. - Sb. {{ shop.workHoursWeek }}</ion-text>
-          <ion-text>Nd. {{ shop.workHoursSunday }}</ion-text>
+          <ion-text class="info-title"
+            >{{ "shop.workHours" | translate }}:</ion-text
+          >
+          <ion-text>{{ "shop.fromMondayToSaturday" | translate }} {{ shop.workHoursWeek }}</ion-text>
+          <ion-text>{{ "shop.sunday" | translate }} {{ shop.workHoursSunday }}</ion-text>
         </ion-row>
         <ion-row>
-          <ion-text class="info-title">Odległość:</ion-text>
+          <ion-text class="info-title">{{ "common.distance" | translate }}</ion-text>
           <ion-text>{{ shop.distanceFromUser }} km</ion-text>
         </ion-row>
       </ion-col>
       <ion-col class="sizes-container">
         <ion-row>
-          <ion-text class="info-title">Dostępne rozmiary: </ion-text>
+          <ion-text class="info-title">{{ "product.sizesAvailable" | translate }}: </ion-text>
         </ion-row>
         <ion-row class="sizes-wrapper">
           <ion-col

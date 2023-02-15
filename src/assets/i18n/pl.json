@@ -1,5 +1,27 @@
 {
   "product": {
-    "chooseSize": "Wybierz rozmiar"
+    "chooseSize": "Wybierz rozmiar",
+    "size": "Rozmiar",
+    "checkAvailability": "Sprawdź dostępność w sklepie",
+    "sortingAndFilterting": "Filtrowanie i sortowanie",
+    "sizesAvailable": "Dostępne rozmiary",
+    "sortBy": "Sortuj według",
+    "priceAsc": "Cena rosnąco",
+    "priceDesc": "Cena malejąco",
+    "nameAsc": "Nazwa rosnąco",
+    "nameDesc": "Nazwa malejąco",
+    "filters": "Filtry",
+    "price": "Cena"
+  },
+  "shop": {
+    "workHours": "Godziny pracy",
+    "fromMondayToSaturday": "Pn. - Sb.",
+    "Sunday": "Nd."
+  },
+  "common": {
+    "add": "Dodaj",
+    "save": "Zapisz",
+    "reset": "Resetuj",
+    "distance": "Odległość"
   }
 }
