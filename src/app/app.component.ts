@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AppPaths } from './common/config/app-paths';
 
 @Component({
@@ -9,5 +10,11 @@ import { AppPaths } from './common/config/app-paths';
 export class AppComponent {
   AppPaths = AppPaths;
 
-  constructor() {}
+  constructor(private translate: TranslateService) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.translate.setDefaultLang('pl');
+  }
 }

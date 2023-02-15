@@ -7,6 +7,9 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { CustomCommonModule } from '../common/common.module';
 import { ProductDetailsComponent } from '../common/modules/product-details/product-details.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from '../app.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -15,6 +18,13 @@ import { ProductDetailsComponent } from '../common/modules/product-details/produ
     IonicModule,
     HomePageRoutingModule,
     CustomCommonModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
   declarations: [HomePage, ProductDetailsComponent],
 })

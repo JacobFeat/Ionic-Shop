@@ -53,7 +53,10 @@
   <ion-toolbar>
     <ion-buttons>
       <ion-button class="btn btn-choose" (click)="presentActionSheet()">
-        <p *ngIf="!size; else sizeWrapper">Wybierz rozmiar</p>
+        <!-- <p *ngIf="!size; else sizeWrapper">Wybierz rozmiar</p> -->
+        <p *ngIf="!size; else sizeWrapper">
+          {{ "product.chooseSize" | translate }}
+        </p>
         <ng-template #sizeWrapper>Rozmiar {{ size }}</ng-template>
         <ion-icon slot="end" icon="assets/icon/expand-down-arrow.svg"></ion-icon
       ></ion-button>
