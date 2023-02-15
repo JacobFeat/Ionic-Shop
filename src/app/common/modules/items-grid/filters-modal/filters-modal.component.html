@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
     <ion-buttons slot="start">
       <ion-button (click)="onCancel()">
         <ion-icon slot="icon-only" icon="assets/icon/close.svg"></ion-icon>
@@ -73,7 +73,7 @@
 </ion-content>
 
 <ion-footer class="footer-only-buttons">
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
     <ion-buttons>
       <ion-button (click)="onSave()" class="btn btn-save">{{
         "common.save" | translate

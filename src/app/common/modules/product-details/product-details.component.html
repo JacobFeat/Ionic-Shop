@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
     <ion-buttons slot="start">
       <ion-button (click)="onCancel()">
         <ion-icon slot="icon-only" icon="assets/icon/close.svg"></ion-icon>
@@ -50,7 +50,7 @@
   </ion-grid>
 </ion-content>
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
     <ion-buttons>
       <ion-button class="btn btn-choose" (click)="presentActionSheet()">
         <p *ngIf="!size; else sizeWrapper">

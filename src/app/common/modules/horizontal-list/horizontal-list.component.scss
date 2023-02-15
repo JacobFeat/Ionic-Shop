@@ -15,11 +15,11 @@ ion-card {
   }
 
   img.circle {
-    height: unset;
     border-radius: 100%;
     aspect-ratio: 1/1;
     object-position: 50% 50%;
     width: 71px;
+    height: 71px;
   }
 }
 
