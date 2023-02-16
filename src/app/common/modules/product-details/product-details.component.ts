@@ -93,9 +93,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   private getCurrentUserLocation = async () => {
-    const coordinates = await Geolocation.getCurrentPosition();
-    const { longitude, latitude } = coordinates.coords;
-    this.userLocation = { longitude, latitude };
+    await Geolocation.getCurrentPosition().then(res => {
+      const { longitude, latitude } = res.coords;
+      this.userLocation = { longitude, latitude };
+    });
   };
 
   private getAvailableSizesModel(

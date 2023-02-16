@@ -18,7 +18,7 @@
   "shop": {
     "workHours": "Godziny pracy",
     "fromMondayToSaturday": "Pn. - Sb.",
-    "Sunday": "Nd."
+    "sunday": "Nd."
   },
   "common": {
     "add": "Dodaj",
