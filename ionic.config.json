@@ -1,7 +1,10 @@
 {
   "name": "Graysh-shop",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }
