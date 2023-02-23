@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, filter } from 'rxjs';
+import { UnsubscribeComponent } from '../common/components/unsubscribe/unsubscribe.component';
 import { Ad } from '../common/defs/ad.defs';
 import { Category, CategoryForYou } from '../common/defs/category.defs';
 import { Product } from '../common/defs/product-defs';
@@ -16,7 +17,7 @@ import { HomeListsModel } from './models/home-lists.model';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage extends UnsubscribeComponent implements OnInit {
   protected specialForYouProducts!: Product[];
   protected categoriesForYou!: CategoryForYou[];
   protected categories!: Category[];
@@ -31,12 +32,14 @@ export class HomePage implements OnInit {
     private productsService: ProductsService,
     private categoriesService: CategoriesService,
     private adsService: AdsService
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.initData();
     this.getHorizontalListModels();
-    this.searchProductsByName();
+    this.searchProductsOnValueChanges();
   }
 
   initData(): void {
@@ -54,15 +57,20 @@ export class HomePage implements OnInit {
       HomeListsModel.getCategoriesForYouHorizontalModel();
   }
 
-  private searchProductsByName(): void {
-    this.searchControl.valueChanges
-      .pipe(
-        debounceTime(300),
-        filter((val) => val.trim() !== '')
-      )
-      .subscribe((searchedValue) => {
-        const foundProducts =
-          this.productsService.searchProductsByName(searchedValue);
-      });
+  private searchProductsOnValueChanges(): void {
+    this.registerSub(
+      this.searchControl.valueChanges
+        .pipe(
+          debounceTime(300),
+          filter((val) => val.trim() !== '')
+        )
+        .subscribe(this.searchProductByName.bind(this))
+    );
+  }
+
+  private searchProductByName(productName: string): void {
+    const foundProducts =
+      this.productsService.searchProductsByName(productName);
+    console.log(foundProducts);
   }
 }

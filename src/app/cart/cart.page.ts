@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { UnsubscribeComponent } from '../common/components/unsubscribe/unsubscribe.component';
 import { ProductWithChoosenSize } from '../common/defs/product-defs';
 import { CartService } from '../common/services/cart.service';
 
@@ -9,7 +10,7 @@ import { CartService } from '../common/services/cart.service';
   templateUrl: './cart.page.html',
   styleUrls: ['./cart.page.scss'],
 })
-export class CartPage implements OnInit {
+export class CartPage extends UnsubscribeComponent implements OnInit {
   protected products!: ProductWithChoosenSize[];
   protected emptyGridIconName = 'bag-no-color';
   protected totalOrderAmount = 0;
@@ -18,15 +19,19 @@ export class CartPage implements OnInit {
     private cartService: CartService,
     private alertController: AlertController,
     private translate: TranslateService
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit() {
-    this.cartService.productsInCart$.subscribe((products) => {
-      this.products = products;
-      this.totalOrderAmount = this.products.reduce((acc, product) => {
-        return acc + product.price;
-      }, 0);
-    });
+    this.registerSub(
+      this.cartService.productsInCart$.subscribe((products) => {
+        this.products = products;
+        this.totalOrderAmount = this.products.reduce((acc, product) => {
+          return acc + product.price;
+        }, 0);
+      })
+    );
   }
 
   protected deleteProduct(id: number): void {

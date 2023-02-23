@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from '../common/modules/product-details/produ
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';
 import { HttpClient } from '@angular/common/http';
+import { UnsubscribeComponent } from '../common/components/unsubscribe/unsubscribe.component';
 
 @NgModule({
   imports: [

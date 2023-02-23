@@ -16,13 +16,17 @@ import { Coordinates } from '../../defs/location.defs';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { UnsubscribeComponent } from '../../components/unsubscribe/unsubscribe.component';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent
+  extends UnsubscribeComponent
+  implements OnInit
+{
   @Input() product!: Product | undefined;
   @ViewChild(IonModal) modal!: IonModal;
 
@@ -35,21 +39,24 @@ export class ProductDetailsComponent implements OnInit {
     private actionSheetCtrl: ActionSheetController,
     private cartService: CartService,
     private router: Router,
-    private translate: TranslateService 
-  ) {}
+    private translate: TranslateService
+  ) {
+    super();
+  }
 
   ngOnInit() {
     this.getCurrentUserLocation();
-    this.cartService.productsInCart$.subscribe((products) => {
-      this.productsInCartAmount = products.length;
-    });
+    this.registerSub(
+      this.cartService.productsInCart$.subscribe((products) => {
+        this.productsInCartAmount = products.length;
+      })
+    );
   }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
       header: this.translate.instant('product.chooseSize'),
       buttons: this.getAvailableSizesModel(this.product),
-
     });
 
     await actionSheet.present();

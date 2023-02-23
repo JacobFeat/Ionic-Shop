@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { UnsubscribeComponent } from 'src/app/common/components/unsubscribe/unsubscribe.component';
 import { Ad } from 'src/app/common/defs/ad.defs';
 import { Product } from 'src/app/common/defs/product-defs';
 import { Type } from 'src/app/common/defs/type.defs';
@@ -17,7 +18,7 @@ import { CategoriesListsModel } from './models/categories-lists.model';
   templateUrl: './categories.page.html',
   styleUrls: ['./categories.page.scss'],
 })
-export class CategoriesPage implements OnInit {
+export class CategoriesPage extends UnsubscribeComponent implements OnInit {
   private paramName = 'categoryId';
   protected categoryId!: number;
   protected productsTypes!: Type[];
@@ -34,18 +35,22 @@ export class CategoriesPage implements OnInit {
     private productsService: ProductsService,
     private navCtrl: NavController,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((paramMap) => {
-      if (!paramMap.has(this.paramName)) this.navigateBackToHome();
+    this.registerSub(
+      this.route.paramMap.subscribe((paramMap) => {
+        if (!paramMap.has(this.paramName)) this.navigateBackToHome();
 
-      this.categoryId = Number(paramMap.get(this.paramName));
-      this.initDataFromRouterParam();
-      this.initTheMostPopularProductsForThisCategory();
-      this.getHorizontalListModels();
-      this.ad = this.getAdByCategoryId();
-    });
+        this.categoryId = Number(paramMap.get(this.paramName));
+        this.initDataFromRouterParam();
+        this.initTheMostPopularProductsForThisCategory();
+        this.getHorizontalListModels();
+        this.ad = this.getAdByCategoryId();
+      })
+    );
   }
 
   private navigateBackToHome() {
