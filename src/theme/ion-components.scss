@@ -16,13 +16,13 @@ ion-header {
 
     ion-searchbar {
       input {
-        font-size: 14px !important;
+        font-size: rem(14) !important;
         padding-inline-start: 40px !important;
         --box-shadow: 0;
       }
 
       .searchbar-cancel-button {
-        font-size: 14px !important;
+        font-size: rem(14) !important;
       }
     }
   }

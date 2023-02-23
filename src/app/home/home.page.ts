@@ -1,4 +1,4 @@
-import { Component, ComponentRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ad } from '../common/defs/ad.defs';
 import { Category, CategoryForYou } from '../common/defs/category.defs';
 import { Product } from '../common/defs/product-defs';

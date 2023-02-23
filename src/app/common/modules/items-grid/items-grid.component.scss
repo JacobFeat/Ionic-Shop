@@ -4,7 +4,7 @@
     margin: 0 auto 16px;
     --background: none;
     --background-activated: none;
-    --color: #000;
+    --color: var(--ion-color-medium-contrast);
     font-weight: 600;
     text-transform: uppercase;
   }
@@ -18,7 +18,7 @@
   margin-bottom: 10px;
 
   ion-text {
-    font-size: 14px;
+    font-size: rem(14);
     text-align: right;
   }
 }
@@ -47,11 +47,11 @@ ion-card-content {
 
 ion-text {
   display: block;
-  font-size: 12px;
+  font-size: rem(12);
   text-align: left;
 }
 
 .title {
-  font-size: 16px;
+  font-size: rem(16);
   font-weight: 700;
 }

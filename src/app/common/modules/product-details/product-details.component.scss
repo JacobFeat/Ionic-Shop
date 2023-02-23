@@ -68,17 +68,17 @@ ion-col {
 }
 
 .product-name {
-  font-size: 16px;
+  font-size: rem(16);
   font-weight: 600;
   margin-bottom: 11px;
 }
 
 .product-price {
-  font-size: 16px;
+  font-size: rem(16);
 }
 
 .product-description {
-  font-size: 12px;
+  font-size: rem(12);
 }
 
 .check-availability-wrapper {
@@ -88,7 +88,7 @@ ion-col {
 }
 
 .check-availability-btn {
-  font-size: 14px;
+  font-size: rem(14);
   font-weight: 600;
   color: var(--ion-color-primary);
   --background: none;
@@ -110,7 +110,7 @@ ion-footer ion-toolbar {
 
   .btn {
     height: 40px;
-    font-size: 12px;
+    font-size: rem(12);
     flex: 1 1 50%;
   }
 

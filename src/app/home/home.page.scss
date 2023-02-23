@@ -1,3 +1,5 @@
+@import '../../theme/common/functions.scss';
+
 ion-searchbar {
   --background: var(--ion-color-light);
   --cancel-button-color: #535353;
@@ -12,8 +14,7 @@ ion-searchbar {
   }
 
   ion-label {
-    // TODO przerobic na REM
-    font-size: 24px;
+    font-size: rem(24);
     font-weight: 600;
   }
 }
