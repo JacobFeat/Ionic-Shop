@@ -1,0 +1,133 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.ionic.starter"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml
+10
+11    <!-- Permissions -->
+12
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:41:5-67
+13-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:41:22-64
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:42:5-81
+14-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:42:22-78
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:43:5-79
+15-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:43:22-76
+16
+17    <uses-feature android:name="android.hardware.location.gps" />
+17-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:44:5-66
+17-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:44:19-63
+18
+19    <uses-permission android:name="android.permission.VIBRATE" />
+19-->[:capacitor-haptics] D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-66
+19-->[:capacitor-haptics] D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-63
+20
+21    <application
+21-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:5:5-37:19
+22        android:allowBackup="true"
+22-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:6:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.8.0] C:\Users\jakub\.gradle\caches\transforms-3\fe0dba67bfac75aa58e7b93d33808165\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+24        android:debuggable="true"
+25        android:icon="@mipmap/ic_launcher"
+25-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:7:9-43
+26        android:label="@string/app_name"
+26-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:8:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:9:9-54
+28        android:supportsRtl="true"
+28-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:10:9-35
+29        android:testOnly="true"
+30        android:theme="@style/AppTheme" >
+30-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:11:9-40
+31        <activity
+31-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:13:9-26:20
+32            android:name="io.ionic.starter.MainActivity"
+32-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:15:13-57
+33            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+33-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:14:13-129
+34            android:exported="true"
+34-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:19:13-36
+35            android:label="@string/title_activity_main"
+35-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:16:13-56
+36            android:launchMode="singleTask"
+36-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:18:13-44
+37            android:theme="@style/AppTheme.NoActionBarLaunch" >
+37-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:17:13-62
+38            <intent-filter>
+38-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:21:13-24:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:22:17-69
+39-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:22:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:23:17-77
+41-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:23:27-74
+42            </intent-filter>
+43        </activity>
+44
+45        <provider
+46            android:name="androidx.core.content.FileProvider"
+46-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:29:13-62
+47            android:authorities="io.ionic.starter.fileprovider"
+47-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:30:13-64
+48            android:exported="false"
+48-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:31:13-37
+49            android:grantUriPermissions="true" >
+49-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:32:13-47
+50            <meta-data
+50-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:33:13-35:64
+51                android:name="android.support.FILE_PROVIDER_PATHS"
+51-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:34:17-67
+52                android:resource="@xml/file_paths" />
+52-->D:\Informatyka\Semestr II\SiAM\Graysh\Graysh-shop\android\app\src\main\AndroidManifest.xml:35:17-51
+53        </provider>
+54
+55        <activity
+55-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jakub\.gradle\caches\transforms-3\8ff1e9f283fdec7034b38b65639640bb\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+56            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+56-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jakub\.gradle\caches\transforms-3\8ff1e9f283fdec7034b38b65639640bb\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+57            android:exported="false"
+57-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jakub\.gradle\caches\transforms-3\8ff1e9f283fdec7034b38b65639640bb\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+58            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+58-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\jakub\.gradle\caches\transforms-3\8ff1e9f283fdec7034b38b65639640bb\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+59
+60        <meta-data
+60-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\jakub\.gradle\caches\transforms-3\b514778927d5d649e023cffd6d8fd05c\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+61            android:name="com.google.android.gms.version"
+61-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\jakub\.gradle\caches\transforms-3\b514778927d5d649e023cffd6d8fd05c\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+62            android:value="@integer/google_play_services_version" />
+62-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\jakub\.gradle\caches\transforms-3\b514778927d5d649e023cffd6d8fd05c\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+63
+64        <provider
+64-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+65            android:name="androidx.startup.InitializationProvider"
+65-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+66            android:authorities="io.ionic.starter.androidx-startup"
+66-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+67            android:exported="false" >
+67-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+68            <meta-data
+68-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+69                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+69-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+70                android:value="androidx.startup" />
+70-->[androidx.emoji2:emoji2:1.0.0] C:\Users\jakub\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+71            <meta-data
+71-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\jakub\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+72                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+72-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\jakub\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+73                android:value="androidx.startup" />
+73-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\jakub\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+74        </provider>
+75    </application>
+76
+77</manifest>
