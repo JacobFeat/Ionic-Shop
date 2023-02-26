@@ -1,0 +1,52 @@
+{
+  "product": {
+    "chooseSize": "Choose size",
+    "size": "Size",
+    "checkAvailability": "Check availability in the shop",
+    "sortingAndFilterting": "Filtering and sorting",
+    "sizesAvailable": "Available sizes",
+    "sortBy": "Sort by",
+    "priceAsc": "Price ascending",
+    "priceDesc": "Price descending",
+    "nameAsc": "Name ascending",
+    "nameDesc": "Name descending",
+    "filters": "Filters",
+    "price": "Price",
+    "noProducts": "No products",
+    "lookForProducts": "Search products"
+  },
+  "shop": {
+    "workHours": "Work hours",
+    "fromMondayToSaturday": "Mon. - Sat.",
+    "sunday": "Sun."
+  },
+  "common": {
+    "add": "Add",
+    "save": "Save",
+    "reset": "Reset",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "distance": "Distance",
+    "chooseLang": "Choose language",
+    "settings": "Settings",
+    "cart": "Cart",
+    "favourite": "Favourite",
+    "myProfile": "My profile",
+    "attention": "Attention",
+    "functionWillBeAvailableSoon": "Function will be available soon",
+    "weAreWorkingOnThisSection": "We are working on this section",
+    "noProductsInTheCart": "No products in the cart"
+  },
+  "order": {
+    "delivery": "Delivery",
+    "orderValue": "Order value",
+    "free": "FREE",
+    "totalOrder": "TOTAL ORDER",
+    "finalize": "FINALIZE"
+  },
+  "horizontalList": {
+    "specialForYou": "Special for you",
+    "categoriesForYou": "Categories for you",
+    "theMostPopular": "The most popular"
+  }
+}

@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar mode="ios">
     <ion-searchbar
+      [formControl]="searchControl"
       placeholder="{{ 'product.lookForProducts' | translate }}"
       searchIcon="assets/icon/search.svg"
     ></ion-searchbar>

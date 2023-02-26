@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from '../common/modules/product-details/produ
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';
 import { HttpClient } from '@angular/common/http';
+import { UnsubscribeComponent } from '../common/components/unsubscribe/unsubscribe.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,8 @@ import { HttpClient } from '@angular/common/http';
     IonicModule,
     HomePageRoutingModule,
     CustomCommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

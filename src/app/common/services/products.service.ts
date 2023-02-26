@@ -39,4 +39,10 @@ export class ProductsService {
   ): Product[] {
     return getAllProductsByCategoryAndTypeId(categoryId, typeId);
   }
+
+  searchProductsByName(productName: string): Product[] {
+    return this.products.filter((product) =>
+      product.name.toLocaleLowerCase().includes(productName.toLocaleLowerCase())
+    );
+  }
 }

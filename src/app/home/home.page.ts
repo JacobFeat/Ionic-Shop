@@ -1,4 +1,7 @@
-import { Component, ComponentRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { debounceTime, filter } from 'rxjs';
+import { UnsubscribeComponent } from '../common/components/unsubscribe/unsubscribe.component';
 import { Ad } from '../common/defs/ad.defs';
 import { Category, CategoryForYou } from '../common/defs/category.defs';
 import { Product } from '../common/defs/product-defs';
@@ -14,7 +17,7 @@ import { HomeListsModel } from './models/home-lists.model';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage extends UnsubscribeComponent implements OnInit {
   protected specialForYouProducts!: Product[];
   protected categoriesForYou!: CategoryForYou[];
   protected categories!: Category[];
@@ -23,15 +26,20 @@ export class HomePage implements OnInit {
   protected categoriesForYouHorizontalModel!: HorizontalListItem;
   protected productDetailComponent = ProductDetailsComponent;
 
+  protected searchControl!: FormControl<string>;
+
   constructor(
     private productsService: ProductsService,
     private categoriesService: CategoriesService,
     private adsService: AdsService
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.initData();
     this.getHorizontalListModels();
+    this.searchProductsOnValueChanges();
   }
 
   initData(): void {
@@ -39,6 +47,7 @@ export class HomePage implements OnInit {
     this.categories = this.categoriesService.categories;
     this.categoriesForYou = this.categoriesService.categoriesForYou;
     this.ads = this.adsService.ads;
+    this.searchControl = new FormControl();
   }
 
   private getHorizontalListModels(): void {
@@ -46,5 +55,22 @@ export class HomePage implements OnInit {
       HomeListsModel.getProductsHorizontalModel();
     this.categoriesForYouHorizontalModel =
       HomeListsModel.getCategoriesForYouHorizontalModel();
+  }
+
+  private searchProductsOnValueChanges(): void {
+    this.registerSub(
+      this.searchControl.valueChanges
+        .pipe(
+          debounceTime(300),
+          filter((val) => val.trim() !== '')
+        )
+        .subscribe(this.searchProductByName.bind(this))
+    );
+  }
+
+  private searchProductByName(productName: string): void {
+    const foundProducts =
+      this.productsService.searchProductsByName(productName);
+    console.log(foundProducts);
   }
 }

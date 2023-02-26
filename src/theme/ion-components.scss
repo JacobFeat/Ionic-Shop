@@ -1,7 +1,8 @@
+@import "../theme/common/functions.scss";
+
 ion-header {
   ion-toolbar {
-    --min-height: 60px;
-    max-height: 60px;
+    --min-height: 68px;
     padding-left: 19px;
     padding-right: 19px;
     --border-width: 0px !important;
@@ -16,13 +17,13 @@ ion-header {
 
     ion-searchbar {
       input {
-        font-size: 14px !important;
+        font-size: rem(14) !important;
         padding-inline-start: 40px !important;
         --box-shadow: 0;
       }
 
       .searchbar-cancel-button {
-        font-size: 14px !important;
+        font-size: rem(14) !important;
       }
     }
   }

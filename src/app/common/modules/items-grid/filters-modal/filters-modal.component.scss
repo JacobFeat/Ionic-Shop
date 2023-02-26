@@ -1,3 +1,5 @@
+@import "../../../../../theme/common/functions.scss";
+
 ion-title {
   text-transform: uppercase;
   padding-inline: unset;
@@ -5,13 +7,13 @@ ion-title {
 
 .filter-title {
   font-weight: 600;
-  font-size: 16px;
+  font-size: rem(16);
 }
 
 .filter-subtitle {
   display: block;
   margin-top: 12px;
-  font-size: 14px;
+  font-size: rem(14);
   font-weight: 600;
 }
 
@@ -21,7 +23,7 @@ ion-title {
   ion-item {
     --inner-border-width: 0;
     display: flex;
-    font-size: 14px;
+    font-size: rem(14);
   }
 
   ion-radio-group {
@@ -96,7 +98,7 @@ ion-footer ion-toolbar {
 
   .btn {
     height: 40px;
-    font-size: 12px;
+    font-size: rem(12);
     flex: 1 1 50%;
   }
 

@@ -1,3 +1,5 @@
+@import '../../../theme/common/functions.scss';
+
 .section-container {
   &:first-child {
     margin-top: 10px;
@@ -9,5 +11,5 @@
 }
 
 .vertical-list-item {
-  font-size: 14px;
+  font-size: rem(14);
 }

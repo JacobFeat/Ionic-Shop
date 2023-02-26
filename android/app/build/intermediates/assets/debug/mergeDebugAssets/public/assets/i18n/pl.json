@@ -1,0 +1,52 @@
+{
+  "product": {
+    "chooseSize": "Wybierz rozmiar",
+    "size": "Rozmiar",
+    "checkAvailability": "Sprawdź dostępność w sklepie",
+    "sortingAndFilterting": "Filtrowanie i sortowanie",
+    "sizesAvailable": "Dostępne rozmiary",
+    "sortBy": "Sortuj według",
+    "priceAsc": "Cena rosnąco",
+    "priceDesc": "Cena malejąco",
+    "nameAsc": "Nazwa rosnąco",
+    "nameDesc": "Nazwa malejąco",
+    "filters": "Filtry",
+    "price": "Cena",
+    "noProducts": "Brak produktów",
+    "lookForProducts": "Szukaj produktów"
+  },
+  "shop": {
+    "workHours": "Godziny pracy",
+    "fromMondayToSaturday": "Pn. - Sb.",
+    "sunday": "Nd."
+  },
+  "common": {
+    "add": "Dodaj",
+    "save": "Zapisz",
+    "reset": "Resetuj",
+    "cancel": "Anuluj",
+    "clear": "Wyczyść",
+    "distance": "Odległość",
+    "chooseLang": "Wybierz język",
+    "settings": "Ustawienia",
+    "cart": "Koszyk",
+    "favourite": "Ulubione",
+    "myProfile": "Mój profil",
+    "attention": "Uwaga",
+    "functionWillBeAvailableSoon": "Funkcja będzie wkrótce dostępna",
+    "weAreWorkingOnThisSection": "Pracujemy nad tym obszarem",
+    "noProductsInTheCart": "Brak produktów w koszyku"
+  },
+  "order": {
+    "delivery": "Dostawa",
+    "orderValue": "Wartość zamówienia",
+    "free": "BEZPŁATNIE",
+    "totalOrder": "SUMA",
+    "finalize": "FINALIZUJ"
+  },
+  "horizontalList": {
+    "specialForYou": "Specjalnie dla Ciebie",
+    "categoriesForYou": "Kategorie dla Ciebie",
+    "theMostPopular": "Najchętniej wybierane"
+  }
+}

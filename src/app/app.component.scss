@@ -1,13 +1,15 @@
+@import "../theme/common/functions.scss";
+
 ion-tab-button {
   ion-icon {
-    font-size: 24px;
+    font-size: rem(24);
     stroke: var(--ion-color-tertiary);
   }
 
   &.tab-selected {
     ion-icon {
       stroke: var(--ion-color-primary);
-      stroke-width: 2px
+      stroke-width: 2px;
     }
   }
 }

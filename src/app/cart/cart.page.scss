@@ -1,10 +1,12 @@
+@import "../../theme/common/functions.scss";
+
 .section-container {
   margin-top: 40px;
 }
 
 p {
   margin: 0;
-  font-size: 14px;
+  font-size: rem(14);
 }
 
 .product-container {
