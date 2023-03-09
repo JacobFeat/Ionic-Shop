@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Logowanie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="section-container">
+    <form [formGroup]="form" (submit)="onLogin()">
+      <ion-item fill="solid">
+        <ion-label position="floating">Nazwa użytkownika</ion-label>
+        <ion-input formControlName="login" type="text"></ion-input>
+        <ion-note *ngIf="form.get('login')?.touched" slot="error"
+          >Niepoprawny e-mail</ion-note
+        >
+      </ion-item>
+      <ion-item fill="solid">
+        <ion-label position="floating">Hasło</ion-label>
+        <ion-input formControlName="password" type="text"></ion-input>
+        <ion-note *ngIf="form.get('password')?.touched" slot="error"
+          >Niepoprawne hasło</ion-note
+        >
+      </ion-item>
+      <ion-button type="submit" class="login-btn">Zaloguj</ion-button>
+    </form>
+  </section>
+</ion-content>

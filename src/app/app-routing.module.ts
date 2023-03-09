@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
+    canLoad: [AuthGuard],
   },
   {
     path: 'my-profile',
@@ -18,6 +20,7 @@ const routes: Routes = [
       import('./my-profile/my-profile.module').then(
         (m) => m.MyProfilePageModule
       ),
+    canLoad: [AuthGuard],
   },
   {
     path: 'favourites',
@@ -25,16 +28,19 @@ const routes: Routes = [
       import('./favourites/favourites.module').then(
         (m) => m.FavouritesPageModule
       ),
+    canLoad: [AuthGuard],
   },
   {
     path: 'cart',
     loadChildren: () =>
       import('./cart/cart.module').then((m) => m.CartPageModule),
+    canLoad: [AuthGuard],
   },
   {
     path: 'settings',
     loadChildren: () =>
       import('./settings/settings.module').then((m) => m.SettingsPageModule),
+    canLoad: [AuthGuard],
   },
   {
     path: 'product-details',
@@ -42,6 +48,12 @@ const routes: Routes = [
       import('./common/modules/product-details/product-details.module').then(
         (m) => m.ProductDetailsPageModule
       ),
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/auth.module').then((m) => m.AuthPageModule),
   },
 ];
 
