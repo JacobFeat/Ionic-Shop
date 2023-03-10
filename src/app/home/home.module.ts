@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { CustomCommonModule } from '../common/common.module';
+import { CustomCommonModule } from '../common/custom-common.module';
 import { ProductDetailsComponent } from '../common/modules/product-details/product-details.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';

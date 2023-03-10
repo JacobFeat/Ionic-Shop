@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/app.module';
-import { CustomCommonModule } from '../../common.module';
+import { CustomCommonModule } from '../../custom-common.module';
 import { ProductAvailabilityComponent } from './product-availability/product-availability.component';
 
 @NgModule({

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProductTypesPageRoutingModule } from './product-types-routing.module';
 
 import { ProductTypesPage } from './product-types.page';
-import { CustomCommonModule } from 'src/app/common/common.module';
+import { CustomCommonModule } from 'src/app/common/custom-common.module';
 
 @NgModule({
   imports: [

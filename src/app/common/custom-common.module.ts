@@ -8,6 +8,7 @@ import { HorizontalListModule } from './modules/horizontal-list/horizontal-list.
 import { AdBannerModule } from './modules/ad-banner/ad-banner.module';
 import { ItemsGridModule } from './modules/items-grid/items-grid.module';
 import { EmptyGridModule } from './modules/empty-grid/empty-grid.module';
+import { SearchListModule } from './modules/search-list/search-list.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,14 @@ import { EmptyGridModule } from './modules/empty-grid/empty-grid.module';
     AdBannerModule,
     ItemsGridModule,
     EmptyGridModule,
+    SearchListModule,
   ],
-  exports: [HorizontalListModule, AdBannerModule, ItemsGridModule, EmptyGridModule],
+  exports: [
+    HorizontalListModule,
+    AdBannerModule,
+    ItemsGridModule,
+    EmptyGridModule,
+    SearchListModule,
+  ],
 })
 export class CustomCommonModule {}

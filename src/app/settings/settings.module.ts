@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
-import { CustomCommonModule } from '../common/common.module';
+import { CustomCommonModule } from '../common/custom-common.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';
 import { HttpClient } from '@angular/common/http';
