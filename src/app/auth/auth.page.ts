@@ -28,8 +28,6 @@ export class AuthPage implements OnInit {
   }
 
   protected onLogin(): void {
-    // console.log(this.form.value);
-
     this.authService.login();
     this.router.navigateByUrl('/home');
   }

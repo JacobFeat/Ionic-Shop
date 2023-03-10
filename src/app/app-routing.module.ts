@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
-    canLoad: [AuthGuard],
+    // canLoad: [AuthGuard],
   },
   {
     path: 'my-profile',
@@ -20,7 +20,7 @@ const routes: Routes = [
       import('./my-profile/my-profile.module').then(
         (m) => m.MyProfilePageModule
       ),
-    canLoad: [AuthGuard],
+    // canLoad: [AuthGuard],
   },
   {
     path: 'favourites',
@@ -28,19 +28,19 @@ const routes: Routes = [
       import('./favourites/favourites.module').then(
         (m) => m.FavouritesPageModule
       ),
-    canLoad: [AuthGuard],
+    // canLoad: [AuthGuard],
   },
   {
     path: 'cart',
     loadChildren: () =>
       import('./cart/cart.module').then((m) => m.CartPageModule),
-    canLoad: [AuthGuard],
+    // canLoad: [AuthGuard],
   },
   {
     path: 'settings',
     loadChildren: () =>
       import('./settings/settings.module').then((m) => m.SettingsPageModule),
-    canLoad: [AuthGuard],
+    // canLoad: [AuthGuard],
   },
   {
     path: 'product-details',
@@ -48,7 +48,7 @@ const routes: Routes = [
       import('./common/modules/product-details/product-details.module').then(
         (m) => m.ProductDetailsPageModule
       ),
-    canLoad: [AuthGuard],
+    // canLoad: [AuthGuard],
   },
   {
     path: 'auth',

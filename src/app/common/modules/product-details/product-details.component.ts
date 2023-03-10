@@ -17,6 +17,7 @@ import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { UnsubscribeComponent } from '../../components/unsubscribe/unsubscribe.component';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
@@ -100,19 +101,18 @@ export class ProductDetailsComponent
   }
 
   private getCurrentUserLocation = async () => {
-    await Geolocation.getCurrentPosition().then(res => {
-      const { longitude, latitude } = res.coords;
-      this.userLocation = { longitude, latitude };
-    });
+    await Geolocation.getCurrentPosition()
+      .then((res) => {
+        const { longitude, latitude } = res.coords;
+        this.userLocation = { longitude, latitude };
+      })
+      .catch(() => EMPTY);
   };
 
   private getAvailableSizesModel(
     product: Product | undefined
   ): ActionSheetButtonsModel[] {
-    const model: ActionSheetButtonsModel[] = [];
-    model.push(this.getCancelButton());
-    model.push(...this.getAvailableSizesButtons(product));
-    return model;
+    return [this.getCancelButton(), ...this.getAvailableSizesButtons(product)];
   }
 
   private getCancelButton(): ActionSheetButtonsModel {
